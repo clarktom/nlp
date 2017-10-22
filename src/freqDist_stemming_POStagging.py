@@ -5,7 +5,7 @@ import re
 import random
 import string
 
-with open('Dirty Result.json', 'r') as f:
+with open('../data/dirty_result.json', 'r') as f:
     try:
         dataset = json.load(f)
 
