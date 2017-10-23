@@ -40,7 +40,6 @@ print("\n Top 20 words")
 for i in textDist.most_common(20):
     print(i)
 
-
 ps = stem.PorterStemmer()
 
 stemmed = []

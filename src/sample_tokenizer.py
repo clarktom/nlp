@@ -38,6 +38,13 @@ postagged = []
 for i in nltk.pos_tag(words):
     postagged.append(i)
 
+# Regex list:
+#    Variables :   (?:\b)[a-zA-Z]_?\w*(?:\b)
+#    Operators :   (?:\b)(\+|-|~|\*|\*\*|/|//|%|<<|>>|&|\||\^|and|or|not|in|not in|is|is not|<|>|!=|<>|==|<=|<>)(?:\b)
+#    Delimiters :  (\(|\)|\[|\]|{|}|,|:|\.|`|=|;|\+=|-=|\*=|/=|//=|%=|<=|\|=|\^=|>>=|<<=|\*\*=|'|\"|\\|@)
+#    Keywords :    (?:\b)(and|del|global|not|with|as|elif|if|or|yield|assert|else|import|pass|False|break|expect|in|raise|None|class|finally|is|return|True|continue|for|lambda|try|def|from|nonlocal|while)(?:\b)
+
+
 ##train_text = nltk.corpus.state_union.raw("2005-GWBush.txt")
 ##sample_text = nltk.corpus.state_union.raw("2006-GWBush.txt")
 ##
