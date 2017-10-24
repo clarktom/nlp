@@ -9,6 +9,7 @@ import scrapy
 
 
 class Proj1Item(scrapy.Item):
-	posts = scrapy.Field()
-	
-	pass
+    question = scrapy.Field()
+    answers = scrapy.Field()
+    numOfAns = scrapy.Field()
+    pass
