@@ -7,7 +7,7 @@ import string
 
 methodpattern = [(r"(?:\\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD')]
 stringpattern = [(r"(?<!\w)(?:(?:\"{3}(?:.|\n)+?\"{3})|(?:'{3}(?:.|\n)+?'{3})|(?:\"[^\"\n]*\w[^\"\n]*\")|(?:'[^'\n]*\w[^'\n]*'))(?!\w)",'STRING')]
-commentpattern = [(r"(?:\\b)(?:#.+)",'COMMENT')]
+commentpattern = [(r"(#.+)",'COMMENT')]
 variablepattern = [(r'(?:\\b)((?:[a-zA-Z]|_)(?:(?:\.(?:_|\w)|(?:_|\w)))*\((?:.*)\))','VARIABLE')]
 
 methodtagger = RegexpTagger(methodpattern)
@@ -40,8 +40,8 @@ for post in dataset[5:10]:
 ##                methods.append(token.lower())
 ##            for token in regexp_tokenize(sent, stringpattern[0][0]):
 ##                strings.append(token.lower())
-            for token in regexp_tokenize(sent, "(?:\\b)(#.+[^\n])"):
-                comments.append(token.lower())
+            for token in regexp_tokenize(sent, "(#.+)"):
+                comments.append(re.search("(#.+)", sent).group(1))
 ##            for token in regexp_tokenize(sent, "(#.+)"):
 ##                variables.append(token.lower())
 ##    for texts in post['question']:
@@ -56,7 +56,7 @@ for post in dataset[5:10]:
 ##                variables.append(token.lower())
 textDist = FreqDist(mywords)
 
-for i in (set(comments)):
+for i in (comments):
     print(i)
     print('========')
 
