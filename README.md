@@ -43,33 +43,33 @@ Questions having 26 answer: 5
 Questions having 27 answer: 1
 Questions having 28 answer: 1
 
-Percentage of questions having 1 answer: 28/5332
-Percentage of questions having 2 answer: 45/5332
-Percentage of questions having 3 answer: 67/5332
-Percentage of questions having 4 answer: 65/5332
-Percentage of questions having 5 answer: 59/5332
-Percentage of questions having 6 answer: 65/5332
-Percentage of questions having 7 answer: 53/5332
-Percentage of questions having 8 answer: 41/5332
-Percentage of questions having 9 answer: 30/5332
+Percentage of questions having 1 answer: 28/668
+Percentage of questions having 2 answer: 45/668
+Percentage of questions having 3 answer: 67/668
+Percentage of questions having 4 answer: 65/668
+Percentage of questions having 5 answer: 59/668
+Percentage of questions having 6 answer: 65/668
+Percentage of questions having 7 answer: 53/668
+Percentage of questions having 8 answer: 41/668
+Percentage of questions having 9 answer: 30/668
 
-Percentage of questions having 10 answer: 29/5332
-Percentage of questions having 11 answer: 41/5332
-Percentage of questions having 12 answer: 30/5332
-Percentage of questions having 13 answer: 20/5332
-Percentage of questions having 14 answer: 13/5332
-Percentage of questions having 15 answer: 12/5332
-Percentage of questions having 16 answer: 11/5332
-Percentage of questions having 17 answer: 8/5332
-Percentage of questions having 18 answer: 8/5332
-Percentage of questions having 19 answer: 7/5332
+Percentage of questions having 10 answer: 29/668
+Percentage of questions having 11 answer: 41/668
+Percentage of questions having 12 answer: 30/668
+Percentage of questions having 13 answer: 20/668
+Percentage of questions having 14 answer: 13/668
+Percentage of questions having 15 answer: 12/668
+Percentage of questions having 16 answer: 11/668
+Percentage of questions having 17 answer: 8/668
+Percentage of questions having 18 answer: 8/668
+Percentage of questions having 19 answer: 7/668
 
-Percentage of questions having 20 answer: 8/5332
-Percentage of questions having 21 answer: 1/5332
-Percentage of questions having 22 answer: 5/5332
-Percentage of questions having 23 answer: 7/5332
-Percentage of questions having 24 answer: 5/5332
-Percentage of questions having 25 answer: 3/5332
-Percentage of questions having 26 answer: 5/5332
-Percentage of questions having 27 answer: 1/5332
-Percentage of questions having 28 answer: 1/5332
+Percentage of questions having 20 answer: 8/668
+Percentage of questions having 21 answer: 1/668
+Percentage of questions having 22 answer: 5/668
+Percentage of questions having 23 answer: 7/668
+Percentage of questions having 24 answer: 5/668
+Percentage of questions having 25 answer: 3/668
+Percentage of questions having 26 answer: 5/668
+Percentage of questions having 27 answer: 1/668
+Percentage of questions having 28 answer: 1/668
