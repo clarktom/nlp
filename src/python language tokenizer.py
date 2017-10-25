@@ -8,7 +8,7 @@ import string
 
 stop_words = corpus.stopwords.words("english")
 
-with open('Dirty Result.json', 'r') as f:
+with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
     try:
         dataset = json.load(f)
 
@@ -24,8 +24,8 @@ strings = []
 comments = []
 variables = []
 mywords = []
-for post in dataset[:]:
-    for texts in post['posts']:
+for post in dataset[:5]:
+    for texts in post['answers']:
         for sent in sent_tokenize(BeautifulSoup(texts, 'html.parser').get_text()):
             for token in regexp_tokenize(sent, "(?:\\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))"):
                 methods.append(token.lower())
@@ -33,6 +33,16 @@ for post in dataset[:]:
                 strings.append(token.lower())
             for token in regexp_tokenize(sent, "(?:\\b)(?:#.+)"):
                 comments.append(token.lower())
+##            for token in regexp_tokenize(sent, "(#.+)"):
+##                variables.append(token.lower())
+##    for texts in post['question']:
+##        for sent in sent_tokenize(BeautifulSoup(texts, 'html.parser').get_text()):
+##            for token in regexp_tokenize(sent, "(?:\\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))"):
+##                methods.append(token.lower())
+##            for token in regexp_tokenize(sent, "(?:\"[^\"\n]+\w[^\"\n]+\")|(?:'[^\"\n]+\w[^\"\n]+')|(?:\"{3}[^\"\n]+\w[^\"\n]+\"{3})|(?:'{3}[^'{3}]+'{3})"):
+##                strings.append(token.lower())
+##            for token in regexp_tokenize(sent, "(?:\\b)(?:#.+)"):
+##                comments.append(token.lower())
 ##            for token in regexp_tokenize(sent, "(#.+)"):
 ##                variables.append(token.lower())
 textDist = FreqDist(mywords)
