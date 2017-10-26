@@ -121,7 +121,7 @@ with open('top 20 irregulars.txt', encoding="utf-8",mode='w') as f:
         f.write('irregular word: %s\n' %str(irregularWord))
         f.write('%s\n' %'showing all unique tokens')
         f.write("\n")
-        for word in mywords:
+        for word in irregularWords:
             if irregularWord[0] in word and word not in top20irregulars:
                 for i in range(len(irregularWord[0])):
                     if irregularWord[0][i] != word[i]:
