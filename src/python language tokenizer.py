@@ -109,7 +109,7 @@ for token in mywords:
 ##    print('next token')
     if token.lower() not in stop_words and lemmaed_token not in mydict and lemmaedV_token not in mydict and stemmed_token not in mydict:
         irregularWords.append(token.lower())
-print('time taken to check for irregulars: %f' %(time.time()-start)
+print('time taken to check for irregulars: %f' %(time.time()-start))
 
 irregularWordsDist = FreqDist(irregularWords)
 print("\n Top 20 irregular words")

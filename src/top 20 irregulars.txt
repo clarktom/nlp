@@ -228,17 +228,17 @@ numpy_mkl
 numpy-1.11.0_xxx.whl
 
 #######################################
-irregular word: ('setup.py', 65)
-showing all unique tokens
-
-setup.py
-
-#######################################
 irregular word: ('conda', 65)
 showing all unique tokens
 
 conda
 conda-forge
+
+#######################################
+irregular word: ('setup.py', 65)
+showing all unique tokens
+
+setup.py
 
 #######################################
 irregular word: ('etc', 62)
@@ -346,12 +346,10 @@ python3-psycopg2
 psycopg2==2.7b2
 
 #######################################
-irregular word: ('ipython', 52)
+irregular word: ('__init__.py', 52)
 showing all unique tokens
 
-ipython
-ipythonrc
-ipython_config_dir/profile_profilename/startup
+__init__.py
 
 #######################################
 irregular word: ('c++', 52)
