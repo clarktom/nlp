@@ -5,25 +5,30 @@ import re
 import random
 import string
 
-methodpattern = [(r"(?:\\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD')]
-stringpattern = [(r"(?<!\w)(?:(?:\"{3}(?:.|\n)+?\"{3})|(?:'{3}(?:.|\n)+?'{3})|(?:\"[^\"\n]*\w[^\"\n]*\")|(?:'[^'\n]*\w[^'\n]*'))(?!\w)",'STRING')]
-commentpattern = [(r"(#.+)",'COMMENT')]
-variablepattern = [(r'(?:\\b)((?:[a-zA-Z]|_)(?:(?:\.(?:_|\w)|(?:_|\w)))*\((?:.*)\))','VARIABLE')]
+methodpattern = [(r"(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD')]
+stringpattern = [(r"(?:(?<!\w)|r)(?:(?:\"{3}.+?\"{3})|(?:'{3}.+?'{3})|(?:\"(?:(?!\\n)[^\"])+?\")|(?:'(?:(?!\\n)[^'])+?'))(?!\w)",'STRING')]
+commentpattern = [(r"(?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?=\\n|\n)",'COMMENT')]
+variablepattern = [(r'(?:\b)((?:[a-zA-Z]|_)(?:(?:\.(?:_|\w)|(?:_|\w)))*\((?:.*)\))','VARIABLE')]
 
 methodtagger = RegexpTagger(methodpattern)
 stringtagger = RegexpTagger(stringpattern)
 commenttagger = RegexpTagger(commentpattern)
 variabletagger = RegexpTagger(variablepattern)
 
-stop_words = corpus.stopwords.words("english")
 
 with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
     try:
         dataset = json.load(f)
+        for i in range(len(dataset)):
+            dataset[i]['question'] = BeautifulSoup(dataset[i]['question'], 'html.parser').get_text()
+            for j in range(len(dataset[i]['answers'])):
+                dataset[i]['answers'][j] = BeautifulSoup(dataset[i]['answers'][j], 'html.parser').get_text()
 
     except Exception as e:
         print(e)
 
+stop_words = corpus.stopwords.words("english")
+contractions = ["n't", "'s,", "s'", "'d", "'ll" , "'ve", "'re", "'m"]
 mydict = [x.lower() for x in corpus.words.words()]
 ps = stem.PorterStemmer()
 lmtzr = stem.wordnet.WordNetLemmatizer()
@@ -33,32 +38,58 @@ strings = []
 comments = []
 variables = []
 mywords = []
-for post in dataset[5:10]:
-    for texts in post['answers']:
-        for sent in sent_tokenize(BeautifulSoup(texts, 'html.parser').get_text()):
-##            for token in regexp_tokenize(sent, methodpattern[0][0]):
-##                methods.append(token.lower())
-##            for token in regexp_tokenize(sent, stringpattern[0][0]):
-##                strings.append(token.lower())
-            for token in regexp_tokenize(sent, "(#.+)"):
-                comments.append(re.search("(#.+)", sent).group(1))
-##            for token in regexp_tokenize(sent, "(#.+)"):
-##                variables.append(token.lower())
-##    for texts in post['question']:
-##        for sent in sent_tokenize(BeautifulSoup(texts, 'html.parser').get_text()):
-##            for token in regexp_tokenize(sent, "(?:\\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))"):
-##                methods.append(token.lower())
-##            for token in regexp_tokenize(sent, "(?:\"[^\"\n]+\w[^\"\n]+\")|(?:'[^\"\n]+\w[^\"\n]+')|(?:\"{3}[^\"\n]+\w[^\"\n]+\"{3})|(?:'{3}[^'{3}]+'{3})"):
-##                strings.append(token.lower())
-##            for token in regexp_tokenize(sent, "(?:\\b)(?:#.+)"):
-##                comments.append(token.lower())
-##            for token in regexp_tokenize(sent, "(#.+)"):
-##                variables.append(token.lower())
-textDist = FreqDist(mywords)
+newdataset = dataset
+i = 0
 
-for i in (comments):
+for i in range(len(dataset)):
     print(i)
-    print('========')
+    sentences = sent_tokenize(dataset[i]['question'])
+    for k in range(len(sentences)):
+        tokens = regexp_tokenize(sentences[k], methodpattern[0][0])
+        for l in range(len(tokens)):
+            methods.append(tokens[l].lower)
+            newdataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
+        tokens = regexp_tokenize(sentences[k], stringpattern[0][0])
+        for l in range(len(tokens)):
+            strings.append(tokens[l].lower())
+            newdataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
+        tokens = regexp_tokenize(sentences[k], commentpattern[0][0])
+        for l in range(len(tokens)):
+            comments.append(re.sub('\s+?$', '', tokens[l].lower()))
+            newdataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
+    for j in range(len(dataset[i]['answers'])):
+        sentences = sent_tokenize(dataset[i]['answers'][j])
+        for k in range(len(sentences)):
+            tokens = regexp_tokenize(sentences[k], methodpattern[0][0])
+            for l in range(len(tokens)):
+                methods.append(tokens[l].lower())
+                newdataset[i]['answers'][j] = dataset[i]['question'][j].replace(tokens[l],'')
+            tokens = regexp_tokenize(sentences[k], stringpattern[0][0])
+            for l in range(len(tokens)):
+                strings.append(tokens[l].lower())
+                newdataset[i]['answers'][j] = dataset[i]['question'][j].replace(tokens[l],'')
+            tokens = regexp_tokenize(sentences[k], commentpattern[0][0])
+            for l in range(len(tokens)):
+                comments.append(re.sub('\s+?$', '', tokens[l].lower()))
+                newdataset[i]['answers'][j] = dataset[i]['question'][j].replace(tokens[l],'')
+
+
+for post in newdataset:
+    for sent in sent_tokenize(post['question']):
+        for token in word_tokenize(sent):
+            if token.lower() not in stop_words and token not in contractions and token not in string.punctuation and not re.match("^[\W]+$", token):
+                mywords.append(token.lower())
+    for texts in post['answers']:
+        for sent in sent_tokenize(texts):
+            for token in word_tokenize(sent):
+                if token.lower() not in stop_words and token not in contractions and token not in string.punctuation and not re.match("^[\W]+$", token):
+                    mywords.append(token.lower())
+                    
+textDist = FreqDist(methods+strings+comments+mywords)
+
+##for i in sorted(set(comments)):
+##    print(i)
+##    print('========')
 
 
 print("\n Top 20 words")
