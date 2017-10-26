@@ -1,0 +1,366 @@
+
+#######################################
+irregular word: ('django', 182)
+showing all unique tokens
+
+django
+django==1.3.7
+django-admin
+django-extensions
+django-viewtools
+django.db
+django.core.exceptions
+django.conf
+django.conf.urls.defaults
+djangoproject
+django.db.utils.databaseerror
+django.contrib.admin
+django.contrib.auth
+django.contrib.contenttypes
+django.contrib.sessions
+django.contrib.sites
+django.contrib.messages
+django.contrib.messages.storage.cookie.cookiestorage
+djangobook.com
+django.forms
+django.shortcuts
+django.template
+django.views.generic.base
+django-registration
+django.core.cache
+django.conf.global_settings
+django.template.loader
+django.core.management
+django-settings
+django==1.3
+django==1.5
+django_site
+django-admin-option
+django-inspired
+django.utils.translation
+django-gunicorn-nginx
+django-rest
+django-piston
+django-dynamicresponse
+djangorestframework
+django-rest-framework-jwt
+django/python
+
+#######################################
+irregular word: ('def', 166)
+showing all unique tokens
+
+defined
+defeat
+def
+definition
+definitive
+definitions
+default
+default-pip
+define
+defaulting
+defining
+defusedxml
+defeated
+defines
+definitely
+default_data
+definite
+defaults
+defn
+def=
+defaulted
+deflate
+default_path
+default_file
+default_message
+defaults.date_input_formats
+defeats
+
+#######################################
+irregular word: ('installed', 153)
+showing all unique tokens
+
+installed
+ignore-installed
+installed_apps
+
+#######################################
+irregular word: ('http', 153)
+showing all unique tokens
+
+http
+https
+http-server
+httpresponse
+httplib2
+httpd
+http/1.1
+httprpcserver
+http-based
+httplib
+
+#######################################
+irregular word: ('sudo', 145)
+showing all unique tokens
+
+sudo
+
+#######################################
+irregular word: ('virtualenv', 107)
+showing all unique tokens
+
+virtualenv
+virtualenvironment
+virtualenv_setuptools=1
+virtualenv_no_download=1
+virtualenvwrapper
+virtualenvwrapper_python=/usr/local/bin/python
+virtualenvwrapper_virtualenv=/usr/local/bin/virtualenv
+virtualenvwrapper.hook_loader
+virtualenvwrapper.sh
+virtualenvwrapper_python=`which
+virtualenvwrapper_virtualenv=`which
+virtualenv`
+virtualenvwrapper.sh`
+virtualenvwrapper_python=/usr/local/cellar/python/2.7.13/bin/python2.7
+virtualenv-1.11-py3.3.egg-info/
+virtualenv.py
+virtualenv_support/
+virtualenvs
+
+#######################################
+irregular word: ('https', 84)
+showing all unique tokens
+
+
+#######################################
+irregular word: ('database', 82)
+showing all unique tokens
+
+database
+databases
+databaseerror
+databasename
+database-like
+
+#######################################
+irregular word: ('app', 81)
+showing all unique tokens
+
+application
+append
+applicable
+appears
+appreciated
+appending
+apply
+approach
+applies
+appropriate
+app
+approaches
+applied
+apps
+app/
+app.package_a.module_a
+app.package_b.module_b
+app.package_a
+app.sub1.mod1
+app.sub2
+appropriately
+appearing
+apparently
+apple
+applications
+appear
+applying
+approved
+appeared
+appengine
+application/library
+application-specific
+appreciate
+app_name
+approximately
+application/json
+application/jason
+approximate
+app.models
+appcfg.py
+appengine_rpc.py
+appcfg
+appl
+ankylosguild.apps.raiding.models.difficulty
+app_label
+ankylosguild.apps.raiding.models.zone
+ankylosguild.apps.raiding.models.boss
+ankylosguild.apps.raiding.models.item
+ankylosguild.apps.forum.models.category
+ankylosguild.apps.forum.models.comment
+ankylosguild.apps.forum.models.forum
+ankylosguild.apps.forum.models.post
+ankylosguild.apps.forum.models.commentpoint
+ankylosguild.apps.forum.models.topicpoint
+ankylosguild.apps.auctionhouse.models.auction
+ankylosguild.apps.auctionhouse.models.bid
+application.py
+app.task
+apples
+apple:143
+apple:0
+apple_range
+approximations
+
+#######################################
+irregular word: ('numpy', 71)
+showing all unique tokens
+
+numpy
+numpy/scipy
+numpy.ndarray
+numpy.dtype
+numpy-1.13.1.dist-info
+numpy-1.7.1-py2.7.egg-info
+numpy._distributor_init
+numpy_mkl
+numpy-1.11.0_xxx.whl
+
+#######################################
+irregular word: ('setup.py', 65)
+showing all unique tokens
+
+setup.py
+
+#######################################
+irregular word: ('conda', 65)
+showing all unique tokens
+
+conda
+conda-forge
+
+#######################################
+irregular word: ('etc', 62)
+showing all unique tokens
+
+etc
+etc.
+etc/gmt
+etc/gmt+0
+etc/gmt+1
+etc/gmt+10
+etc/gmt+11
+etc/gmt+12
+etc/gmt+2
+etc/gmt+3
+etc/gmt+4
+etc/gmt+5
+etc/gmt+6
+etc/gmt+7
+etc/gmt+8
+etc/gmt+9
+etc/gmt-0
+etc/gmt-1
+etc/gmt-10
+etc/gmt-11
+etc/gmt-12
+etc/gmt-13
+etc/gmt-14
+etc/gmt-2
+etc/gmt-3
+etc/gmt-4
+etc/gmt-5
+etc/gmt-6
+etc/gmt-7
+etc/gmt-8
+etc/gmt-9
+etc/gmt0
+etc/greenwich
+etc/uct
+etc/utc
+etc/universal
+etc/zulu
+etc.how
+etc..
+
+#######################################
+irregular word: ('setuptools', 60)
+showing all unique tokens
+
+setuptools
+setuptools/easy_install
+setuptools-0.6c11-py2.6.egg
+setuptools/
+setuptools-2.0.2.dist-info/
+setuptools-2.0.1-py3.3.egg
+setuptools.pth
+
+#######################################
+irregular word: ('api', 60)
+showing all unique tokens
+
+api
+apis
+apiclient.discovery
+apiclient
+
+#######################################
+irregular word: ('easy_install', 57)
+showing all unique tokens
+
+easy_install
+env/bin/easy_install
+easy_install.py
+
+#######################################
+irregular word: ('google', 57)
+showing all unique tokens
+
+google
+googled
+google-fu
+google-api-python-client
+google-api-python-client-gae-
+googles
+
+#######################################
+irregular word: ('psycopg2', 54)
+showing all unique tokens
+
+psycopg2
+psycopg2-2.4.tar.gz
+pip-egg-info\psycopg2.egg-info
+pip-egg-info\psycopg2.egg-info\pkg-info
+pip-egg-info\psycopg2.egg-info\top_level.txt
+pip-egg-info\psycopg2.egg-info\dependency_links.txt
+psycopg2-2.5.win32-py2.7-pg9.2.4-release.exe
+python-psycopg2
+psycopg2-2.5.2.tar.gz
+psycopg2should
+psycopg2-ctypes
+psycopg2.extensions
+psycopg2-2.4.5.tar.gz
+psycopg2-2.4.5/setup.py
+python3-psycopg2
+psycopg2==2.7b2
+
+#######################################
+irregular word: ('ipython', 52)
+showing all unique tokens
+
+ipython
+ipythonrc
+ipython_config_dir/profile_profilename/startup
+
+#######################################
+irregular word: ('c++', 52)
+showing all unique tokens
+
+c++
+c/c++/c
+c/c++
+c++/java
+c++—even
+c++/python
+#######################################
