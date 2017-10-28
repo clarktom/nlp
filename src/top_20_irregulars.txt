@@ -50,41 +50,16 @@ django/python
 irregular word: ('def', 166)
 showing all unique tokens
 
-defined
-defeat
 def
-definition
-definitive
-definitions
-default
 default-pip
-define
-defaulting
-defining
 defusedxml
-defeated
-defines
-definitely
 default_data
-definite
-defaults
 defn
 def=
-defaulted
-deflate
 default_path
 default_file
 default_message
 defaults.date_input_formats
-defeats
-
-#######################################
-irregular word: ('installed', 153)
-showing all unique tokens
-
-installed
-ignore-installed
-installed_apps
 
 #######################################
 irregular word: ('http', 153)
@@ -100,6 +75,14 @@ http/1.1
 httprpcserver
 http-based
 httplib
+
+#######################################
+irregular word: ('installed', 153)
+showing all unique tokens
+
+installed
+ignore-installed
+installed_apps
 
 #######################################
 irregular word: ('sudo', 145)
@@ -149,19 +132,7 @@ database-like
 irregular word: ('app', 81)
 showing all unique tokens
 
-application
-append
-applicable
-appears
-appreciated
-appending
-apply
-approach
-applies
-appropriate
 app
-approaches
-applied
 apps
 app/
 app.package_a.module_a
@@ -169,24 +140,12 @@ app.package_b.module_b
 app.package_a
 app.sub1.mod1
 app.sub2
-appropriately
-appearing
-apparently
-apple
-applications
-appear
-applying
-approved
-appeared
 appengine
 application/library
 application-specific
-appreciate
 app_name
-approximately
 application/json
 application/jason
-approximate
 app.models
 appcfg.py
 appengine_rpc.py
@@ -207,11 +166,9 @@ ankylosguild.apps.auctionhouse.models.auction
 ankylosguild.apps.auctionhouse.models.bid
 application.py
 app.task
-apples
 apple:143
 apple:0
 apple_range
-approximations
 
 #######################################
 irregular word: ('numpy', 71)
@@ -228,17 +185,17 @@ numpy_mkl
 numpy-1.11.0_xxx.whl
 
 #######################################
+irregular word: ('setup.py', 65)
+showing all unique tokens
+
+setup.py
+
+#######################################
 irregular word: ('conda', 65)
 showing all unique tokens
 
 conda
 conda-forge
-
-#######################################
-irregular word: ('setup.py', 65)
-showing all unique tokens
-
-setup.py
 
 #######################################
 irregular word: ('etc', 62)
@@ -301,7 +258,6 @@ irregular word: ('api', 60)
 showing all unique tokens
 
 api
-apis
 apiclient.discovery
 apiclient
 
@@ -346,12 +302,6 @@ python3-psycopg2
 psycopg2==2.7b2
 
 #######################################
-irregular word: ('__init__.py', 52)
-showing all unique tokens
-
-__init__.py
-
-#######################################
 irregular word: ('c++', 52)
 showing all unique tokens
 
@@ -361,4 +311,10 @@ c/c++
 c++/java
 c++—even
 c++/python
+
+#######################################
+irregular word: ('__init__.py', 52)
+showing all unique tokens
+
+__init__.py
 #######################################

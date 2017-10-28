@@ -114,7 +114,7 @@ print('time taken to check for irregulars: %f' %(time.time()-start))
 irregularWordsDist = FreqDist(irregularWords)
 print("\n Top 20 irregular words")
 top20irregulars = []
-with open('top 20 irregulars.txt', encoding="utf-8",mode='w') as f:
+with open('top_20_irregulars.txt', encoding="utf-8",mode='w') as f:
     for irregularWord in irregularWordsDist.most_common(20):
         print(irregularWord)
         f.write('\n%s\n' %'#######################################')
@@ -136,7 +136,7 @@ for sent in sentences:
     for word in irregularWords:
         if word in sent and sent not in irregularWordSentences:
             irregularWordSentences.append(sent)
-with open('random 10 POStags with irregulars.txt', encoding="utf-8",mode='w') as f:
+with open('random_10_POStags_with_irregulars.txt', encoding="utf-8",mode='w') as f:
     for i in range(10):
         f.write('\n%s\n' %'#######################################')
         r = random.random()*len(irregularWordSentences)
