@@ -5,17 +5,19 @@ import re
 import random
 import string
 import time
+pattern = r"""(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))|
+           (?:(?<!\w)|r)(?:(?:\"{3}.+?\"{3})|(?:'{3}.+?'{3})|(?:\"(?:(?!\\n)[^\"])+?\")|(?:'(?:(?!\\n)[^'])+?'))(?!\w)|
+           (?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?=\\n|\n)"""
 
 methodpattern = [(r"(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD')]
 stringpattern = [(r"(?:(?<!\w)|r)(?:(?:\"{3}.+?\"{3})|(?:'{3}.+?'{3})|(?:\"(?:(?!\\n)[^\"])+?\")|(?:'(?:(?!\\n)[^'])+?'))(?!\w)",'STRING')]
 commentpattern = [(r"(?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?=\\n|\n)",'COMMENT')]
+
 ##variablepattern = [(r'(?:\b)((?:[a-zA-Z]|_)(?:(?:\.(?:_|\w)|(?:_|\w)))*\((?:.*)\))','VARIABLE')]
 
-pythontagger = RegexpTagger(methodpattern+stringpattern+commentpattern)
-methodtagger = RegexpTagger(methodpattern)
-stringtagger = RegexpTagger(stringpattern)
-commenttagger = RegexpTagger(commentpattern)
-
+POS_patterns = [(r"(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD'),
+                (r"(?:(?<!\w)|r)(?:(?:\"{3}.+?\"{3})|(?:'{3}.+?'{3})|(?:\"(?:(?!\\n)[^\"])+?\")|(?:'(?:(?!\\n)[^'])+?'))(?!\w)",'STRING'),
+                (r"(?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?=\\n|\n)",'COMMENT')]
 with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
     try:
         dataset = json.load(f)
@@ -63,15 +65,15 @@ for i in range(len(dataset)):
             tokens = regexp_tokenize(sentences[k], methodpattern[0][0])
             for l in range(len(tokens)):
                 methods.append(tokens[l].lower())
-                newdataset[i]['answers'][j] = dataset[i]['question'][j].replace(tokens[l],'')
+                newdataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
             tokens = regexp_tokenize(sentences[k], stringpattern[0][0])
             for l in range(len(tokens)):
                 strings.append(tokens[l].lower())
-                newdataset[i]['answers'][j] = dataset[i]['question'][j].replace(tokens[l],'')
+                newdataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
             tokens = regexp_tokenize(sentences[k], commentpattern[0][0])
             for l in range(len(tokens)):
                 comments.append(re.sub('\s+?$', '', tokens[l].lower()))
-                newdataset[i]['answers'][j] = dataset[i]['question'][j].replace(tokens[l],'')
+                newdataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
 
 sentences = []
 for post in newdataset:
@@ -130,18 +132,26 @@ with open('top_20_irregulars.txt', encoding="utf-8",mode='w') as f:
                         top20irregulars.append(word)
                         f.write("%s\n" % word)
     f.write('%s\n' %'#######################################')
-
+print('there are '+str(len(set(sentences))*len(set(irregularWords)))+' comparisons to make')
+i=0
 irregularWordSentences = []
-for sent in sentences:
-    for word in irregularWords:
+for sent in set(sentences):
+    for word in set(irregularWords):
+        i+=1
+        print(i)
         if word in sent and sent not in irregularWordSentences:
-            irregularWordSentences.append(sent)
+            irregularWordSentences.append((word,sent))
+            
+print('im here2')
 with open('random_10_POStags_with_irregulars.txt', encoding="utf-8",mode='w') as f:
     for i in range(10):
         f.write('\n%s\n' %'#######################################')
         r = random.random()*len(irregularWordSentences)
-        if len(irregularWordSentences[int(r)])<2:
+        while len(irregularWordSentences[int(r)][1])<2:
+            print('less than 2')
             r = random.random()*len(irregularWordSentences)
-        for w in pos_tag(word_tokenize(irregularWordSentences[int(r)])):
+        f.write("%s\n" % ('irregular word: '+str(irregularWordSentences[int(r)])))
+        f.write('\n')
+        for w in pos_tag(word_tokenize(irregularWordSentences[int(r)][1])):
             f.write("%s\n" % str(w))
     f.write('%s\n' %'#######################################')
