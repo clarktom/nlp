@@ -17,6 +17,7 @@ with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
         print(e)
 contractions = ["n't", "'s", "s'", "'d", "'ll" , "'ve", "'re", "'m"] + [x for x in string.punctuation] + [ x for x in '0123456789']
 stop_words = corpus.stopwords.words("english")
+
 words = []
 sentences = []
 
@@ -36,9 +37,14 @@ for post in dataset:
 textDist = FreqDist(words)
 
 print("\n Top 20 words")
+
 for i in textDist.most_common(20):
     print(i)
-
+with open('top_20_before_stemmed(analysis).txt', encoding="utf-8",mode='w') as f:
+    f.write('%s\n\n' %'Top 20 words before stemming: ')
+    for word in textDist.most_common(20):
+        f.write('%s\n' %str(word))
+        
 ps = stem.PorterStemmer()
 
 stemmed = []
@@ -53,7 +59,7 @@ for i in stemDist.most_common(20):
     print(i)
 
 words_stemmed = []
-with open('top 20 stemmed.txt', encoding="utf-8",mode='w') as f:
+with open('top_20_stemmed(analysis).txt', encoding="utf-8",mode='w') as f:
     for stemmedword in stemDist.most_common(20):
         f.write('\n%s\n' %'#######################################')
         f.write('stemmed word: %s\n' %str(stemmedword))
@@ -73,11 +79,11 @@ postagged = []
 
 
 
-with open('random 10 POStags.txt', encoding="utf-8",mode='w') as f:
+with open('random_10_POStags(analysis).txt', encoding="utf-8",mode='w') as f:
     for i in range(10):
         f.write('\n%s\n' %'#######################################')
         r = random.random()*len(sentences)
-        if len(sentences[int(r)])<2:
+        while len(sentences[int(r)])<5:
             r = random.random()*len(sentences)
         for w in pos_tag(word_tokenize(sentences[int(r)])):
             f.write("%s\n" % str(w))
