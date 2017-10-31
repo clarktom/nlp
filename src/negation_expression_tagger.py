@@ -44,7 +44,7 @@ for i in range(len(dataset)):
         tokens = regexp_tokenize(sentences[k], negationExpressionPattern[0][0])
         for l in range(len(tokens)):
             negations.append(tokens[l].lower())
-            newdataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
+            newdataset[i]['questtion'] = dataset[i]['question'].replace(tokens[l],'')
             # print("dataset[i]['question']", dataset[i]['question'])
             # print("newdataset[i]['question']", newdataset[i]['question'])
     for j in range(len(dataset[i]['answers'])):
@@ -62,5 +62,7 @@ for i in range(len(dataset)):
                 # print("dataset[i]['question']:", len(dataset[i]['question']))
                 newdataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
 
-print("Negations:", negations)
-pprint.pprint(negations)
+print("Negations:")
+for i in range(len(negations)):
+    print(negations[i])
+    print("=============================================================")
