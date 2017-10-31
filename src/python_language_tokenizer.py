@@ -6,6 +6,7 @@ import random
 import string
 import time
 
+##        Regex expressions##################################
 methodpattern = [(r"(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD')]
 stringpattern = [(r"(?:(?<!\w)|r)(?:(?:\"{3}.+?\"{3})|(?:'{3}.+?'{3})|(?:\"(?:(?!\\n)[^\"])+?\")|(?:'(?:(?!\\n)[^'])+?'))(?!\w)",'STRING')]
 commentpattern = [(r"(?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?=\\n|\n)",'COMMENT')]
@@ -19,7 +20,11 @@ POS_patterns = [(r"(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\
                 (r'(?:(?:https?:\/\/)?(?:[\da-z\.-]+)\.(?:[a-z\.]{2,6})(?:[\/\w \.-]*)*\/?)','URL')]
 
 pattern = POS_patterns[0][0]+'|'+POS_patterns[1][0]+'|'+POS_patterns[2][0]+'|'+POS_patterns[3][0]+'|'+POS_patterns[4][0]
+##############################################################
 
+
+
+################ formatting datasets#############################
 start = time.time()
 with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
     try:
@@ -48,9 +53,9 @@ with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
                 dataset_IR[i]['answers'][j] = BeautifulSoup(dataset_IR[i]['answers'][j], 'html.parser').get_text()
     except Exception as e:
         print(e)
+########################################################################
 
-
-        
+###########             preparing variables     ########################
 stop_words = set(corpus.stopwords.words("english"))
 contractions = set(["n't", "'s", "s'", "'d", "'ll" , "'ve", "'re", "'m"] + [x for x in string.punctuation] + [ x for x in '0123456789'])
 mydict = set([x.lower() for x in corpus.words.words()])
@@ -72,6 +77,14 @@ i = 0
 
 print('time taken to prepare dataset: %f' %(time.time()-start))
 
+########################################################################
+
+
+
+
+##############       tokenize dataset                  ##############
+
+## remove tokenized data from the dataset so that word_tokenize() will not duplicate existing tokens
 start = time.time()
 for i in range(len(dataset)):
 ##    print(i)
@@ -122,6 +135,8 @@ for i in range(len(dataset)):
                 newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
 
 
+
+##          using word_tokenize() on english words
 for post in newdataset:
     for sent in sent_tokenize(post['question']):
         for token in word_tokenize(sent.lower()):
@@ -133,7 +148,11 @@ for post in newdataset:
             for token in word_tokenize(sent):
                 if len(token) > 1 and token.lower() not in stop_words and token not in contractions and not re.search("^[\W\d]+$", token) and token not in variables:
                     mywords.append(token.lower())
+                    
+########################################################################
 
+
+                    
 textDist = FreqDist(methods+strings+comments+URLs+variables+mywords)
 print('time taken to tokenize: %f' %(time.time()-start))
 
@@ -146,8 +165,10 @@ print('time taken to tokenize: %f' %(time.time()-start))
 ##    print(i)
 
 
-irregularWords = []
 
+#########           checking for irregular words        ####################
+
+irregularWords = []
 print('there are ' + str(len(mywords)) + ' english words.')
 start = time.time()
 i = len(mywords)
@@ -163,7 +184,12 @@ for token in mywords:
             irregularWords.append(token)
 print('time taken to check for irregulars: %f' %(time.time()-start))
 
+########################################################################
 
+
+
+
+###################       create top20 irregular words text file      ####################
 
 irregularWordsDist = FreqDist(irregularWords)
 ##print("\n Top 20 irregular words")
@@ -185,8 +211,12 @@ with open('top_20_irregulars.txt', encoding="utf-8",mode='w') as f:
 
 print('time taken to consolidate irregulars: %f' %(time.time()-start))
 
+############################################################################################
 
 
+
+
+###############             tokenize dataset into sentences               ####################
 sentences = []
 for i in range(len(dataset_IR)):
     p=0
@@ -204,7 +234,7 @@ for i in range(len(dataset_IR)):
                         dataset_IR[i]['question'] = dataset_IR[i]['question'][:j-1]+'.'+dataset_IR[i]['question'][j:]
                     else:
                         dataset_IR[i]['question'] = dataset_IR[i]['question'][:j]+' '+dataset_IR[i]['question'][j:]
-                    
+
             p = j
         j+=1
 
@@ -225,10 +255,10 @@ for i in range(len(dataset_IR)):
                                 dataset_IR[i]['answers'][k] = dataset_IR[i]['answers'][k][:j-1] + '.' + dataset_IR[i]['answers'][k][j:]
                             else:
                                 dataset_IR[i]['answers'][k] = dataset_IR[i]['answers'][k][:j] + ' ' + dataset_IR[i]['answers'][k][j:]
-                            
+
                 p = j
             j+=1
-            
+
 
     for sent in sent_tokenize(dataset_IR[i]['question']):
         if re.search(pattern, sent):
@@ -242,7 +272,14 @@ for i in range(len(dataset_IR)):
             if len(sent)>2:
                 sentences.append(sent.lower())
 
+########################################################################
 
+
+
+
+
+##############                consolidate all sentences containing irregular words         ###############
+######################                      takes 50 minutes                      ########################
 
 start = time.time()
 print('there are '+str(len(set(sentences))*len(set(irregularWords)))+' comparisons to make')
@@ -261,6 +298,13 @@ for word in set(irregularWords):
 
 print('time taken to check irregulars sentences: %f' %(time.time()-start))
 
+
+
+########################################################################
+
+
+
+################          write random_10_POStags_with_irregulars file               ####################
 with open('random_10_POStags_with_irregulars.txt', encoding="utf-8",mode='w') as f:
     for i in range(10):
         r = int(random.random()*len(irregularWordSentence))
@@ -275,4 +319,5 @@ with open('random_10_POStags_with_irregulars.txt', encoding="utf-8",mode='w') as
         for w in pythontagger.tag(tokens):
             f.write("%s\n" % str(w))
     f.write('%s\n' %'#######################################')
-
+    
+########################################################################
