@@ -5,6 +5,7 @@ import re
 import random
 import string
 import time
+import copy
 
 ##        Regex expressions##################################
 methodpattern = [(r"(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD')]
@@ -35,27 +36,14 @@ with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
                 dataset[i]['answers'][j] = BeautifulSoup(dataset[i]['answers'][j], 'html.parser').get_text()
     except Exception as e:
         print(e)
-with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
-    try:
-        newdataset = json.load(f)
-        for i in range(len(dataset)):
-            newdataset[i]['question'] = BeautifulSoup(newdataset[i]['question'], 'html.parser').get_text()
-            for j in range(len(dataset[i]['answers'])):
-                newdataset[i]['answers'][j] = BeautifulSoup(newdataset[i]['answers'][j], 'html.parser').get_text()
-    except Exception as e:
-        print(e)
-with open('dirty_result.json', encoding = 'utf-8', mode='r') as f:
-    try:
-        dataset_IR = json.load(f)
-        for i in range(len(dataset)):
-            dataset_IR[i]['question'] = BeautifulSoup(dataset_IR[i]['question'], 'html.parser').get_text()
-            for j in range(len(dataset[i]['answers'])):
-                dataset_IR[i]['answers'][j] = BeautifulSoup(dataset_IR[i]['answers'][j], 'html.parser').get_text()
-    except Exception as e:
-        print(e)
-########################################################################
 
-###########             preparing variables     ########################
+
+newdataset = copy.deepcopy(dataset)
+dataset_IR = copy.deepcopy(newdataset)
+
+######################################################################
+
+#########             preparing variables     ########################
 stop_words = set(corpus.stopwords.words("english"))
 contractions = set(["n't", "'s", "s'", "'d", "'ll" , "'ve", "'re", "'m"] + [x for x in string.punctuation] + [ x for x in '0123456789'])
 mydict = set([x.lower() for x in corpus.words.words()])
@@ -71,8 +59,6 @@ comments = []
 variables = []
 mywords = []
 URLs = []
-newdataset = dataset
-dataset_IR = dataset[:]
 i = 0
 
 print('time taken to prepare dataset: %f' %(time.time()-start))
@@ -148,11 +134,11 @@ for post in newdataset:
             for token in word_tokenize(sent):
                 if len(token) > 1 and token.lower() not in stop_words and token not in contractions and not re.search("^[\W\d]+$", token) and token not in variables:
                     mywords.append(token.lower())
-                    
+
 ########################################################################
 
 
-                    
+
 textDist = FreqDist(methods+strings+comments+URLs+variables+mywords)
 print('time taken to tokenize: %f' %(time.time()-start))
 
@@ -173,7 +159,7 @@ print('there are ' + str(len(mywords)) + ' english words.')
 start = time.time()
 i = len(mywords)
 for token in mywords:
-    if i % 10000 == 0:
+    if i % 100000 == 0:
         print(i)
     i-=1
     if token not in stop_words and token not in contractions:
@@ -217,23 +203,17 @@ print('time taken to consolidate irregulars: %f' %(time.time()-start))
 
 
 ###############             tokenize dataset into sentences               ####################
+
+start = time.time()
 sentences = []
 for i in range(len(dataset_IR)):
     p=0
     j=0
     while j < len(dataset_IR[i]['question']):
         if dataset_IR[i]['question'][j] == '\n':
-            if j == 0:
-                dataset_IR[i]['question'] = dataset_IR[i]['question'][1:]
-                j-=1
-            elif dataset_IR[i]['question'][j-1] == '\n':
-                dataset_IR[i]['question'] = dataset_IR[i]['question'][:j]+'.'+dataset_IR[i]['question'][j:]
-            elif dataset_IR[i]['question'][j-1] in contractions:
+            if dataset_IR[i]['question'][j-1] in contractions:
                 if not (re.search(pattern,dataset_IR[i]['question'][p:j])):
-                    if dataset_IR[i]['question'][j-1] in ':':
-                        dataset_IR[i]['question'] = dataset_IR[i]['question'][:j-1]+'.'+dataset_IR[i]['question'][j:]
-                    else:
-                        dataset_IR[i]['question'] = dataset_IR[i]['question'][:j]+' '+dataset_IR[i]['question'][j:]
+                    dataset_IR[i]['question'] = dataset_IR[i]['question'][:j]+'. '+dataset_IR[i]['question'][j+1:]
 
             p = j
         j+=1
@@ -243,35 +223,27 @@ for i in range(len(dataset_IR)):
         j=0
         while j < len(dataset_IR[i]['answers'][k]):
             if dataset_IR[i]['answers'][k][j] == '\n':
-                if j == 0:
-                        dataset_IR[i]['answers'][k] = dataset_IR[i]['answers'][k][1:]
-                        j-=1
-                elif dataset_IR[i]['answers'][k][j-1] == '\n':
-                        dataset_IR[i]['answers'][k] = dataset_IR[i]['answers'][k][:j] + '.' + dataset_IR[i]['answers'][k][j:]
-                        j-=1
-                elif dataset_IR[i]['answers'][k][j-1] in contractions:
-                        if not (re.search(pattern,dataset_IR[i]['answers'][k][p:j])):
-                            if dataset_IR[i]['answers'][k][j-1] in ':':
-                                dataset_IR[i]['answers'][k] = dataset_IR[i]['answers'][k][:j-1] + '.' + dataset_IR[i]['answers'][k][j:]
-                            else:
-                                dataset_IR[i]['answers'][k] = dataset_IR[i]['answers'][k][:j] + ' ' + dataset_IR[i]['answers'][k][j:]
+                if dataset_IR[i]['answers'][k][j-1] in contractions:
+                    if not (re.search(pattern,dataset_IR[i]['answers'][k][p:j])):
+                        dataset_IR[i]['answers'][k] = dataset_IR[i]['answers'][k][:j] + '. ' + dataset_IR[i]['answers'][k][j+1:]
 
                 p = j
             j+=1
 
 
     for sent in sent_tokenize(dataset_IR[i]['question']):
-        if re.search(pattern, sent):
+        if not re.search(pattern, sent):
             sent=sent[:-1]
         if len(sent)>2:
             sentences.append(sent.lower())
     for texts in dataset_IR[i]['answers']:
         for sent in sent_tokenize(texts):
-            if re.search(pattern, sent):
+            if not re.search(pattern, sent):
                 sent=sent[:-1]
             if len(sent)>2:
                 sentences.append(sent.lower())
 
+print('time taken to prepare dataset_IR: %f' %(time.time()-start))
 ########################################################################
 
 
@@ -288,7 +260,7 @@ irregularWordSentence = []
 IR_sents = []
 for word in set(irregularWords):
     for sent in set(sentences):
-        if i % 100000 == 0:
+        if i % 1000000 == 0:
             print(i)
         i-=1
         wordpattern = '\W'+re.escape(word)+'\W'
@@ -310,14 +282,15 @@ with open('random_10_POStags_with_irregulars.txt', encoding="utf-8",mode='w') as
         r = int(random.random()*len(irregularWordSentence))
         f.write('\n%s\n' %'#######################################')
         f.write("%s\n\n" % ('irregular word: '+str(irregularWordSentence[int(r)][0])))
-        tokens = set(regexp_tokenize(irregularWordSentence[int(r)][1], pattern))
+        tokens = list(set(regexp_tokenize(irregularWordSentence[int(r)][1], pattern)))
         for l in range(len(tokens)):
-            if len(tokens[l]>3):
+            if len(tokens[l])>3:
                 irregularWordSentence[int(r)][1] = irregularWordSentence[int(r)][1].replace(tokens[l],'')
         for token in word_tokenize(irregularWordSentence[int(r)][1]):
-            tokens.add(token)
+            if token not in tokens:
+                tokens.append(token)
         for w in pythontagger.tag(tokens):
             f.write("%s\n" % str(w))
     f.write('%s\n' %'#######################################')
-    
+
 ########################################################################
