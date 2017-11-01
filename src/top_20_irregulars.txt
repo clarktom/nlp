@@ -1,206 +1,95 @@
 
 #######################################
-irregular word: ('def', 2709)
+irregular word: ('def', 2943)
 showing all unique tokens
 
 def
-defau
-defult
-defnton
-defnon
-defned
+defined/re-defined
 definition..
 default-pip
-default.setter
-defults
+defaultsize
 defaultdict
+default_version
 default_value
 defaultdicts
 defusedxml
-definitins
-definitin
 default-valued
-defaul
-defie
-default_
+default_getpass
 defintion
-default_data
-default_data.update
-defnes
+default_
+default=
+default=7
 def\|class\
 defn
 def=
-definitel
-definiion
 default_msec_format
-defiitio
 definance
+default_priority_steps
 definetly
-defiig
 default_collation_of_character_set_x
-defne
 default-keyword-arguments
-defntely
-defnetl
-defe
+defaults.date_input_formats
+default_flow_style=false
 define—it
-defaultrouter
-defaultig
 default_profile
 
 #######################################
-irregular word: ('http', 476)
+irregular word: ('numpy', 258)
 showing all unique tokens
 
-http
-https
-http-server
-httplib
-httpresponse
-https-based
-https-over-http-proxy
-http-specific
-httperror
-httpd
-httpdigestauth
-http/1.1
-http|ftp
-httplib2
-httprpcserver
-httpstatusappes.com
-httpserver
-http-based
+numpy
+numpythonic
+numpy-1.11.2
+numpy_indexed
+numpy/scipy
+numpy._distributor_init
+numpy_mkl
+numpy+mkl
+numpy-1.11.0_xxx.whl
+numpy-1.13.1+
+numpy.__version__.split
+numpy-aware
 
 #######################################
-irregular word: ('django', 409)
-showing all unique tokens
-
-django
-django-admin
-django-extensions
-django-viewtools
-django-debug-toolbar
-django.conf
-django.forms.widgets.select
-django.http
-django.utils
-django.core
-django.db
-django.db.models.base.modelstate
-django.forms.models
-django.db.models..related
-djangorestframework
-django-betterforms
-django.contrib.auth
-django.views.generic
-django.core.urlresolvers
-django.shortcuts
-django.core.exceptions
-django.confs.urls.defaults
-django.apps
-django.core.wsgi
-django.dispatch
-django.db.backends.signals
-django.forms
-django.conf.urls.defaults
-django.conf.urls
-django.db.models
-djangoproject
-django.request
-django.db.utils.databaseerror
-django.contrib.admin
-django.contrib.contenttypes
-django.contrib.sessions
-django.contrib.sites
-django.contrib.messages
-django.emplae
-django.contrib.messages.storage.cookie.cookiestorage
-django.contrib
-djangobook.com
-django-cms
-django.s
-django.template
-django.s.generic.base
-django.views.generic.base
-django-registration
-django.core.cache
-djangosnippets
-django.core.context_processors.auth
-django.conf.global_settings
-django.template.loader
-django.core.management
-django-settings
-django.contrib.sites.models.site
-django.contrib.sessions.models.session
-django.db.models.base.py
-django.db.models.signals
-django.contrib.auth.views
-django.contrib.auth.decorators
-django.core.files.uploadedfile
-django.contrib.humanize
-django.contrib.sites.models
-django_site
-django-admin-option
-django-inspired
-django.utils.translation
-django-gunicorn-nginx
-django-rest
-django-piston
-django-dynamicresponse
-django.contrib.auth.models
-django-rest-framework-jwt
-django-users
-djangonaut
-django/python
-
-#######################################
-irregular word: ('nd', 399)
-showing all unique tokens
-
-nd
-ndexes
-ndependently
-nder
-nd-array
-ndidtes
-nd/o
-ndex
-ndvduall
-ndex=1
-ndent
-ndinde
-ndarra
-ndarra.shape
-ndarra.tolist
-ndenumerte
-ndarrays
-ndces
-ndes
-ndate
-ndarray
-ndrry
-ndb
-nderstnd
-
-#######################################
-irregular word: ('tht', 267)
-showing all unique tokens
-
-tht
-
-#######################################
-irregular word: ('installed', 256)
+irregular word: ('installed', 255)
 showing all unique tokens
 
 installed
 installed_apps
 
 #######################################
-irregular word: ('e.g', 243)
+irregular word: ('django', 241)
 showing all unique tokens
 
-e.g
-e.g.
+django
+django/forms/
+django==1.3.7
+django-admin
+django-extensions
+django-viewtools
+django-pdb
+django-debug-toolbar
+djangorestframework
+django-betterforms
+djangoproject
+django-cms
+django-registration
+djangosnippets
+django-settings
+django_settings_module=
+django==1.3
+django==1.5
+django_site
+django-admin-option
+django-inspired
+django-gunicorn-nginx
+django-rest
+django-piston
+django-dynamicresponse
+django-rest-framework-jwt
+django-users
+djangonaut
+django/python
 
 #######################################
 irregular word: ('|y', 236)
@@ -210,7 +99,6 @@ showing all unique tokens
 |y*|y
 |y¹|y
 |y²|
-|cf|y
 |y*|y*|y*|y
 |y*|
 
@@ -221,66 +109,25 @@ showing all unique tokens
 sudo
 
 #######################################
-irregular word: ('https', 230)
-showing all unique tokens
-
-
-#######################################
-irregular word: ('sys', 229)
+irregular word: ('sys', 230)
 showing all unique tokens
 
 sys
-sys.platform
-sys.exc_info
 systemexit
-sys.argv
-sys.maxsize
-sys.stdin
-sys.stdin.read
-sys.stdout.write
-sys.stdin.uffer
-sys.version_info
-sys.stderr
-sys.stderr.write
+sys\nfor
 systemrandom
-systemrndom
-sys.float_info
-sys.mxint
-sys.getsizeof
-sys.flot_info
-sys.flotinfo
-sys.maxint
-sys.builtin__names
-sys.modules
-sys.path
-sys.exit
 sys.
-systemext
-sysem
-sys.stout
-sys.getof
-sys.builin_module_names
-sys.path.append
-sys.path.insert
+sys.stdin
 sys_info
 systemerror
 system-site-packages
 systemwide
 system-level
-sysconfigdata.py
 system-provided
-sys.stdout
-sys.std=
-sys.es
-sys.setdefaultencoding
-system.currenttmemlls
-system/currenttmemlls
-system.currenttimemillis
-sys.version
+system/currenttimemillis
 syslog
 syslog-ng
 sysloghandler
-syslog.conf
 syslog.log_local0
 syslog.log_local1
 syslog.log_local2
@@ -289,160 +136,12 @@ syslog.log_local4
 syslog.log_local5
 syslog.log_local6
 syslog.log_local7
-syslog.openlog
-syslog.log_pid
-sysloglibhandler
-sys.dout
-sys.stdout.encoding
-sys.version_info.major
-sys.hexversion
-sys.float_info.psilon
-sys.float_info.epsilon
-sys.float_info.min
-sys.loat_ino.in
-sys.executable
 sys._meipass
-sys.sterr
-sys.et
 systemd
 systemctl
 
 #######################################
-irregular word: ('numpy', 227)
-showing all unique tokens
-
-numpy
-numpythonic
-numpy.array
-numpy.arrays
-numpy-1.11.2
-numpy.where
-numpy.nans
-numpy.ravel
-numpy.ndarray.max
-numpy.arange
-numpy.random
-numpy_indexed
-numpy.ndarray
-numpy/scipy
-numpy.prod
-numpy.nditer
-numpy.ma
-numpy.dtype
-numpy.zip
-numpy-1.13.1.dist-info
-numpy-1.7.1-py2.7.egg-info
-numpy.linalg.norm
-numpy.core.umath_tests
-numpy.linlg
-numpy.diff
-numpy._distributor_init
-numpy_mkl
-numpy+mkl
-numpy-1.11.0_xxx.whl
-numpy-1.13.1+mkl-cp34-cp34m-win32.whl
-numpy-1.13.1+mkl-cp34-cp34m-win32.wh
-numpy.in
-numpy.__version__.split
-numpy.unique
-numpy.roll
-numpy.concatenate
-numpy.zeros
-numpy.ogrid
-numpy.argmax
-numpy.copy
-numpy.copyto
-numpy.ptp
-numpy-aware
-numpy.histogram
-numpy.y
-numpy.fltiter
-
-#######################################
-irregular word: ('json', 223)
-showing all unique tokens
-
-json
-json.loads
-json.load
-json-encoded
-json.dump
-json.dumps
-json/dict
-jsons
-jsonencoder
-jsondecoder
-json_object
-jsonpickle
-jsonserializable
-jsonweb
-jsonweb.encode
-json.ump
-json-tricks
-json_tricks
-json.tool
-jsonresponse
-json_to_csv.py
-jsonrenderer
-json.org
-json.oads
-json.umps
-json.simplejson.dumps
-json/xml/whatever
-jsonarray
-jsonobject
-jsonstring
-
-#######################################
-irregular word: ('datetime', 222)
-showing all unique tokens
-
-datetime
-datetime.date
-datetimefield
-datetime.datetime
-datetime.timedelta
-datetime.__file__
-datetimemodule.c
-datetime.so
-datetimes
-datetime.strftime
-datetime-based
-datetime_timestamp
-datetime.strptime
-datetime.date.today
-datetime.date.
-datetimeindex
-datetime64
-datetime.datetimes
-datetime64s
-datetime.datetime.strptime
-
-#######################################
-irregular word: ('unicode', 205)
-showing all unique tokens
-
-unicode
-unicode_from_
-unicodedata
-unicode_literals
-unicodedata.normalize
-unicodeerror
-unicodedata.combining
-unicode_
-unicode_.translate
-unicodedecodeerror
-unicodeencodeerror
-unicode-only
-unicodereader
-unicodewriter
-unicode-aware
-unicode/string
-unicode-objects
-unicodedammit
-
-#######################################
-irregular word: ('etc', 191)
+irregular word: ('etc', 180)
 showing all unique tokens
 
 etc
@@ -487,129 +186,127 @@ etc.how
 etc..
 
 #######################################
-irregular word: ('ou', 174)
+irregular word: ('built-in', 172)
 showing all unique tokens
 
-outfile
-oupus
-ouside
-ouh
-oud
-ouner
-ouns
-outsde
-ource
-ou
-ound
-ouple
-ourenes
-oul
-oul-star
-oun
-ould
-ount
-oursql
-oudard
-outoop
-outeroop
-out-of-core
-out_file
-outut
-ounter
-ounter-iniate
-oupu
-oupied
-oupl
-ourseles
-outsie
-ounters
-outut_str
-out-of-the-box
-oution
-oups
-oule
-oumentation
-outer_list
-outperformng
-outerloop
-ounry
-ounres
-out-of-date
-outf
-output_file
-outpefom
-out.tring
-output_line
-ounted
-outperorms
-out-pefomed
-ound.afmt_s16_le
-ourier
-outputname
-ource=dalelane-0.0
-output.pdf
-outrght
-oup
-ouverte
-out.built
-oupling
-out-of-sight
-out-of-mind
-outer_instance
-outer.some_method
-outer.inner
-outta
-outerref
+built-in
+built-ins
+built-in/extension
 
 #######################################
-irregular word: ('clss', 174)
+irregular word: ('timeit', 169)
 showing all unique tokens
 
-clss_foo
-clss
-clssmethod
-clss_
-clssmethods
-clsses
-clss-scope
-clssicl
+timeit
+timeit.timer
 
 #######################################
-irregular word: ('dict', 172)
+irregular word: ('virtualenv', 144)
 showing all unique tokens
 
-dictsubclass
-dict.fromkeys
-dict
-dictionar
-dictionay
-dicts
-dictionry
-dictonary
-dict.pop
-dictionries
-dicty
-dict.get
-dictte
-dictionr
-dictreader
-dictreaer
-dictwriter
-dict.update
-dictinaries
-dictinary
-dictconfig
-dictofsomedata
-dict.csv
-dictionary/list
-dicts/strings
+virtualenv
+virtualenvironment
+virtualenvwrapper
+virtualenv_setuptools=1
+virtualenv_no_download=1
+virtualenvs
+virtualenvwrapper_python=/usr/local/bin/python
+virtualenvwrapper_virtualenv=/usr/local/bin/virtualenv
+virtualenvwrapper_python=`which
+virtualenvwrapper_virtualenv=`which
+virtualenv`
+virtualenvwrapper_python=/usr/local/cellar/python/2.7.13/bin/python2.7
+virtualenvwrapper_python=/usr/local/bin/python3.5
+virtualenvwrapper_python=/usr/bin/python
+virtualenv_support/
+virtualenv/pip
 
 #######################################
-irregular word: ('tuple', 162)
+irregular word: ('api', 142)
 showing all unique tokens
 
-tuple
+api
+api_key
+api-key=api_key
+api's
+apiclient
+
+#######################################
+irregular word: ('tuples', 118)
+showing all unique tokens
+
 tuples
 tuples_first_value
-tuple2
+
+#######################################
+irregular word: ('google', 116)
+showing all unique tokens
+
+google
+googled
+google-fu
+google-api-python-client
+googleapiclient
+google-api-python-client-gae-
+googles
+google_drive
+google_drive/bin/python
+google_drive/bin/activate
+google_analytics_code
+googleanalyticsjs
+google-specific
+google_login_client_id
+google_login_client_secret
+google+
+google_api_client_id
+google_api_client_secret
+google_api_scope
+google_oauth2_url
+google_api_url
+
+#######################################
+irregular word: ('typeerror', 111)
+showing all unique tokens
+
+typeerror
+
+#######################################
+irregular word: ('elif', 110)
+showing all unique tokens
+
+elif
+
+#######################################
+irregular word: ('c++', 108)
+showing all unique tokens
+
+c++
+c++/java
+c++—even
+c++/python
+
+#######################################
+irregular word: ('__init__', 107)
+showing all unique tokens
+
+__init__
+__init__.py
+__init__.pyc
+
+#######################################
+irregular word: ('linux', 105)
+showing all unique tokens
+
+linux
+linux2
+linux/unix
+linuxes
+linux-gnome
+
+#######################################
+irregular word: ('classmethod', 105)
+showing all unique tokens
+
+classmethod
+classmethods
 #######################################
