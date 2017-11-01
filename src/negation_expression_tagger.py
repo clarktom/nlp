@@ -63,6 +63,8 @@ for i in range(len(dataset)):
                 newdataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
 
 print("Negations:")
-for i in range(len(negations)):
-    print(negations[i])
-    print("=============================================================")
+with open('negations_found.txt', encoding="utf-8",mode='w') as f:
+    f.write("\n#######################################################\n")
+    for i in range(len(negations)):
+        f.write(negations[i])
+        f.write("\n#######################################################\n")
