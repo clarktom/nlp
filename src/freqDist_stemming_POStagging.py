@@ -85,6 +85,7 @@ with open('random_10_POStags(analysis).txt', encoding="utf-8",mode='w') as f:
         r = random.random()*len(sentences)
         while len(sentences[int(r)])<5:
             r = random.random()*len(sentences)
+        f.write('Sentence: \n%s\n\n' % sentences[int(r)])
         for w in pos_tag(word_tokenize(sentences[int(r)])):
             f.write("%s\n" % str(w))
     f.write('%s\n' %'#######################################')
