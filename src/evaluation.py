@@ -99,8 +99,8 @@ for key, post in posts.items():
         operators.append(tokens[l].lower())
         post["newtext"] = post["text"].replace(tokens[l],'')
             
-    post["sentences"] = sentencetokenize(post["newtext"], pattern)
-    for sent in post["sentences"]:
+    sentences = sentencetokenize(post["newtext"], pattern)
+    for sent in sentences:
         # print("sent:", sent)
         for token in word_tokenize(sent):
             # print("token:", token)
@@ -108,8 +108,7 @@ for key, post in posts.items():
                 mywords.append(token)
 
     alltokens = set(methods+strings+comments+operands+operators+mywords+variables+URLs)
-    post["repr"] = alltokens
-    # print(alltokens)
+    post["words"] = pythontagger.tag(list(alltokens))
 
 # -------- 
 
@@ -121,12 +120,28 @@ doc = r.documents[filename] 			# get document with key 001
 # print(doc.sentences)    			# a list of sentences in document
 # print(doc.annotations)  			# the annotation objects in a document
 
-for word in doc.annotations:
-    print(word.repr, word.labels)
+# for word in doc.annotations:
+#     print(word.repr, word.labels)
 
-print(posts[filename]["repr"])
+# print(posts[filename]["repr"])
+results = []
+for filename, post in posts.items():
+    doc = r.documents[filename] 
+    for word in doc.annotations:
+        print("Manual:", word.repr, word.labels)
+        result = 0
+        matches = [x for x in posts[filename]["words"] if x[0] == word.repr]
+        print("     ", matches)
+        for match in matches:
+            result = 1
+            print("match:", match)
+            # print(match[1].lower(), word.labels.lower())
+            if match[1].lower() == word.labels.lower():
+                result = 2
+        results.append(result)
+print(results)
 
-# # Save to XML
-# r.save_xml("my_folder")
-# # This creates one XML document per original document
-# # in the specified folder.
+
+        # for word in posts[filename]["words"]:
+        #     print("Tokenizer:", word[0], word[1])
+    
