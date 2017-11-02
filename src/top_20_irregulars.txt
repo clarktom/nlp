@@ -1,312 +1,250 @@
 
 #######################################
-irregular word: ('def', 2943)
+irregular word: ('prt', 1151)
 showing all unique tokens
 
-def
-defined/re-defined
-definition..
-default-pip
-defaultsize
-defaultdict
-default_version
-default_value
-defaultdicts
-defusedxml
-default-valued
-default_getpass
-defintion
-default_
-default=
-default=7
-def\|class\
-defn
-def=
-default_msec_format
-definance
-default_priority_steps
-definetly
-default_collation_of_character_set_x
-default-keyword-arguments
-defaults.date_input_formats
-default_flow_style=false
-define—it
-default_profile
+prt
+prts
+prted
+prtg
+prt_
+prtable
+prtargs
+prtout
+prtouts
+prter
+prt_tion
+prtfails
+prtln
+prter2
+prter3
+prter4
 
 #######################################
-irregular word: ('numpy', 258)
+irregular word: ('usg', 913)
 showing all unique tokens
 
-numpy
-numpythonic
-numpy-1.11.2
-numpy_indexed
-numpy/scipy
-numpy._distributor_init
-numpy_mkl
-numpy+mkl
-numpy-1.11.0_xxx.whl
-numpy-1.13.1+
-numpy.__version__.split
-numpy-aware
+usg
 
 #######################################
-irregular word: ('installed', 255)
+irregular word: ('lt', 881)
 showing all unique tokens
 
-installed
-installed_apps
+lt
+lteng
+lts
+lt
+ltdir
+lted
+ltsdictionaries
+lts/
+ltiterat
+ltitem
+lten
+lt/
+lttext
+lt1
+lt2
+ltg
+lter
+ltg/
+ltgs
+lta
+ltb
 
 #######################################
-irregular word: ('django', 241)
+irregular word: ('impt', 569)
 showing all unique tokens
 
-django
-django/forms/
-django==1.3.7
-django-admin
-django-extensions
-django-viewtools
-django-pdb
-django-debug-toolbar
-djangorestframework
-django-betterforms
-djangoproject
-django-cms
-django-registration
-djangosnippets
-django-settings
-django_settings_module=
-django==1.3
-django==1.5
-django_site
-django-admin-option
-django-inspired
-django-gunicorn-nginx
-django-rest
-django-piston
-django-dynamicresponse
-django-rest-framework-jwt
-django-users
-djangonaut
-django/python
+impt
+impted
+imptant
+impts
+imptantly
+impterr
+imptg
+imptable
+impting
+impthtml
+impt.someconverter
 
 #######################################
-irregular word: ('|y', 236)
+irregular word: ('le', 565)
 showing all unique tokens
 
-|y
-|y*|y
-|y¹|y
-|y²|
-|y*|y*|y*|y
-|y*|
+learng
+le
+leavg
+leadg
+less/
+leftto
+lettg
+lerization
+learation
+letime
+len_
+learly
+learization
+lessof
+lessthanzeroexception
+legb
+leeder
+levitsky
+lenghty
+lestyle
+lennart
+lenz
+levenshte
+learsvc
+les/
+leakg
+levels
+le82
+lengthofof
+letterbox
 
 #######################################
-irregular word: ('sudo', 234)
+irregular word: ('strg', 447)
+showing all unique tokens
+
+strg
+strgs
+strgen
+strggenerat
+strg1
+strgmunger
+strgs/
+strgtypes
+strgio
+
+#######################################
+irregular word: ('followg', 362)
+showing all unique tokens
+
+followg
+
+#######################################
+irregular word: ('somethg', 257)
+showing all unique tokens
+
+somethg
+somethgelse
+somethghappen
+
+#######################################
+irregular word: ('rae', 228)
+showing all unique tokens
+
+rae
+raes
+
+#######################################
+irregular word: ('sudo', 222)
 showing all unique tokens
 
 sudo
 
 #######################################
-irregular word: ('sys', 230)
+irregular word: ('sce', 221)
 showing all unique tokens
 
-sys
-systemexit
-sys\nfor
-systemrandom
-sys.
-sys.stdin
-sys_info
-systemerror
-system-site-packages
-systemwide
-system-level
-system-provided
-system/currenttimemillis
-syslog
-syslog-ng
-sysloghandler
-syslog.log_local0
-syslog.log_local1
-syslog.log_local2
-syslog.log_local3
-syslog.log_local4
-syslog.log_local5
-syslog.log_local6
-syslog.log_local7
-sys._meipass
-systemd
-systemctl
+sce
+sce_
+sce_.days
 
 #######################################
-irregular word: ('etc', 180)
+irregular word: ('ault', 186)
 showing all unique tokens
 
-etc
-etc.—are
-etc.
-etc/gmt
-etc/gmt+0
-etc/gmt+1
-etc/gmt+10
-etc/gmt+11
-etc/gmt+12
-etc/gmt+2
-etc/gmt+3
-etc/gmt+4
-etc/gmt+5
-etc/gmt+6
-etc/gmt+7
-etc/gmt+8
-etc/gmt+9
-etc/gmt-0
-etc/gmt-1
-etc/gmt-10
-etc/gmt-11
-etc/gmt-12
-etc/gmt-13
-etc/gmt-14
-etc/gmt-2
-etc/gmt-3
-etc/gmt-4
-etc/gmt-5
-etc/gmt-6
-etc/gmt-7
-etc/gmt-8
-etc/gmt-9
-etc/gmt0
-etc/greenwich
-etc/uct
-etc/utc
-etc/universal
-etc/zulu
-etc.how
-etc..
+ault
+aults
+aulted
+aultdict
+aultdicts
 
 #######################################
-irregular word: ('built-in', 172)
+irregular word: ('thk', 175)
 showing all unique tokens
 
-built-in
-built-ins
-built-in/extension
+thk
+thkg
+thks
 
 #######################################
-irregular word: ('timeit', 169)
+irregular word: ('traceback', 173)
 showing all unique tokens
 
-timeit
-timeit.timer
+traceback
+tracebacks
 
 #######################################
-irregular word: ('virtualenv', 144)
+irregular word: ('dex', 172)
 showing all unique tokens
 
-virtualenv
-virtualenvironment
-virtualenvwrapper
-virtualenv_setuptools=1
-virtualenv_no_download=1
-virtualenvs
-virtualenvwrapper_python=/usr/local/bin/python
-virtualenvwrapper_virtualenv=/usr/local/bin/virtualenv
-virtualenvwrapper_python=`which
-virtualenvwrapper_virtualenv=`which
-virtualenv`
-virtualenvwrapper_python=/usr/local/cellar/python/2.7.13/bin/python2.7
-virtualenvwrapper_python=/usr/local/bin/python3.5
-virtualenvwrapper_python=/usr/bin/python
-virtualenv_support/
-virtualenv/pip
+dex
+dexes
+dexg
+dexcolumn
+dexnocase
+dexed
+dexable
+dexer
 
 #######################################
-irregular word: ('api', 142)
+irregular word: ('wk', 171)
 showing all unique tokens
 
-api
-api_key
-api-key=api_key
-api's
-apiclient
+wk
+wks
+wkarounds
+wkg
+wking
+wked
+wkload
+wkable
+wkgs
+wkpython
+wkout
+wkaround
+wker
+wkers
+wkon
+wkflow
+wkhtmltopdf
+wkcopy
 
 #######################################
-irregular word: ('tuples', 118)
+irregular word: ('america/', 136)
 showing all unique tokens
 
-tuples
-tuples_first_value
+america/
+america//
+america//polis
+america/polis
+america/au
 
 #######################################
-irregular word: ('google', 116)
+irregular word: ('dferent', 135)
 showing all unique tokens
 
-google
-googled
-google-fu
-google-api-python-client
-googleapiclient
-google-api-python-client-gae-
-googles
-google_drive
-google_drive/bin/python
-google_drive/bin/activate
-google_analytics_code
-googleanalyticsjs
-google-specific
-google_login_client_id
-google_login_client_secret
-google+
-google_api_client_id
-google_api_client_secret
-google_api_scope
-google_oauth2_url
-google_api_url
+dferent
+dferently
+dferentiated
+dferentiatg
+dferentiate
+dferentiates
 
 #######################################
-irregular word: ('typeerror', 111)
+irregular word: ('runng', 135)
 showing all unique tokens
 
-typeerror
+runng
 
 #######################################
-irregular word: ('elif', 110)
+irregular word: ('thg', 129)
 showing all unique tokens
 
-elif
-
-#######################################
-irregular word: ('c++', 108)
-showing all unique tokens
-
-c++
-c++/java
-c++—even
-c++/python
-
-#######################################
-irregular word: ('__init__', 107)
-showing all unique tokens
-
-__init__
-__init__.py
-__init__.pyc
-
-#######################################
-irregular word: ('linux', 105)
-showing all unique tokens
-
-linux
-linux2
-linux/unix
-linuxes
-linux-gnome
-
-#######################################
-irregular word: ('classmethod', 105)
-showing all unique tokens
-
-classmethod
-classmethods
+thg
+thgs
+thgskeeper
 #######################################
