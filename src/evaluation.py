@@ -198,12 +198,12 @@ for filename, post in posts.items():
     #     results.append(result)
 
 
-
+total = len(results)
 unique, counts = np.unique(results, return_counts=True)
-print(np.asarray((unique, counts)).T)
-print(len(results))
-
-
-        # for word in posts[filename]["words"]:
-        #     print("Tokenizer:", word[0], word[1])
+results = np.asarray((unique, counts)).T
+results[1][1] = results[1][1] + results[2][1]
+print(results)
+print("Total:", total)
+# for word in posts[filename]["words"]:
+#     print("Tokenizer:", word[0], word[1])
     
