@@ -170,7 +170,7 @@ for filename, post in posts.items():
             # print(match[1].lower(), word.labels.lower())
             if (match[1].lower() in word[1].lower()) or (word[1].lower() in match[1].lower()):
                 result = 2
-                print("         POS tag match !")
+                print("             POS tag match:", word[1].lower())
         results.append(result)
 
 
