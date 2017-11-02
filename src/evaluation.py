@@ -144,24 +144,24 @@ doc = r.documents[filename] 			# get document with key 001
 results = []
 for filename, post in posts.items():
 
-    # --------------- Manual against Tokenizer
+    ## --------------- Manual against Tokenizer
     doc = r.documents[filename] 
     for word in doc.annotations:
-##        print("Manual:", word.repr, word.labels)
+        print("")
+        print("Manual annotation:", word.repr, word.labels)
         result = 0
         matches = [x for x in posts[filename]["words"] if x[0].lower() == word.repr.lower()]
-##        print("     ", matches)
+        print("     Tokenizer matches:", matches)
         for match in matches:
             result = 1
-##            print("Token matches:", match)
             # print(match[1].lower(), word.labels.lower())
-            if match[1].lower().split("_")[0] == word.labels.lower():
+            if (match[1].lower()[0] in word.labels.lower()) or (word.labels.lower() in match[1].lower()[0]):
                 result = 2
-##                print("POS tag match !")
+                print("     POS tag match !")
         results.append(result)
 
 
-    # --------------- Tokenizer against Manual
+    # # --------------- Tokenizer against Manual
     # for word in posts[filename]["words"]:
     #     print("Tokenizer:", word[0], word[1])
     #     result = 0
@@ -179,7 +179,7 @@ for filename, post in posts.items():
     #         result = 1
     #         print("Token matches:", match)
     #         # print(match[1].lower(), word.labels.lower())
-    #         if match[1].lower().split("_")[0] == word[1].lower():
+    #         if (match[1].lower()[0] in word[1].lower()) or (word[1].lower() in match[1].lower()[0]):
     #             result = 2
     #             print("POS tag match !")
     #     results.append(result)
