@@ -14,14 +14,12 @@ commentpattern = (r"(?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?=\\n|\n)",'COMMENT')
 variablepattern = (r'(?:(?:(?:(?:[a-zA-Z_](?:\.\w|\w)*)(?:\[\w*?:?\w*?\])*? *?, *?)*(?:[a-zA-Z_](?:\.\w|\w)*)(?:\[\w*?:?\w*?\])*?)(?= *=))|[a-zA-Z_](?:\.\w|\w)*_+(?:\.\w|\w)*','VARIABLE')
 operandpattern = (r'(?<=[+\-*/%=><]) *(?:[\w[({][^+\-*/%=><\n]*)|(?:(?:True|False)(?= *?.*?:))', 'OPERAND')
 URLpattern = (r'(?:(?:https?:\/\/)?(?:[\da-z\.-]+)\.(?:[a-z\.]{2,6})(?:[\/\w \.-]*)*\/?)','URL')
-operatorpattern = (r"""(?:[+\-*/%:=><^!|~&]{1,3})|\b(?:and|if|else|elif|for|while|try|except|finally|with|as|class|not|is|in|or|xor|def)(?= *.*?:)|(?:\\n|\n)\s*(?:break|continue)\s*(?:\\n|\n)|(?:(?<=\n)|(?<=\\n))\s*return(?= .+?\n|\\n)""", 'OPERATOR')
+operatorpattern = (r"""(?:[+\-*%=><^!|~&]{1,3})|\b(?:and|if|else|elif|for|while|try|except|finally|with|as|class|not|is|in|or|xor|def)(?= *.*?:)|(?:\\n|\n)\s*(?:break|continue)\s*(?:\\n|\n)|(?:(?<=\n)|(?<=\\n))\s*return(?= .+?\n|\\n)""", 'OPERATOR')
 
 POS_patterns = [methodpattern,stringpattern,commentpattern,variablepattern,operandpattern,URLpattern,operatorpattern]
 
 pattern = r'(?:' + POS_patterns[0][0] + r'|' + POS_patterns[1][0] + r'|' + POS_patterns[2][0] + r'|' + POS_patterns[3][0] + r'|' + POS_patterns[4][0] + r'|' + POS_patterns[5][0] + r'|' + POS_patterns[6][0]+ r')'
 ##############################################################
-
-
 
 ################ formatting datasets#############################
 start = time.time()
@@ -57,6 +55,7 @@ comments = []
 variables = []
 mywords = []
 operands = []
+operators = []
 URLs = []
 i = 0
 
@@ -114,10 +113,12 @@ def sentencetokenize(data, pattern):
                 if len(sent)>2:
                     sent = re.sub(r'NEWlineHERE\.$','',sent)
                     sent = re.sub(r'^NEWlineHERE','',sent)
+                    sent = re.sub(r'^\s+','',sent)
+                    sent = re.sub(r'\s+$','',sent)
                     sentences.append(sent.lower())
     return sentences
 
-##############       tokenize dataset                  ##############
+##########################                  tokenize dataset                  ################################
 
 ## remove tokenized data from the dataset so that word_tokenize() will not duplicate existing tokens 2 seconds
 start = time.time()
@@ -127,45 +128,80 @@ for i in range(len(dataset)):
     tokens = regexp_tokenize(dataset[i]['question'], methodpattern[0])
     for l in range(len(tokens)):
         methods.append(tokens[l].lower())
+        dataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
         newdataset[i]['question'] = newdataset[i]['question'].replace(tokens[l],'')
     tokens = regexp_tokenize(dataset[i]['question'], stringpattern[0])
     for l in range(len(tokens)):
         strings.append(tokens[l].lower())
+        dataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
         newdataset[i]['question'] = newdataset[i]['question'].replace(tokens[l],'')
     tokens = regexp_tokenize(dataset[i]['question'], commentpattern[0])
     for l in range(len(tokens)):
         comments.append(re.sub('\s+?$', '', tokens[l].lower()))
+        dataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
         newdataset[i]['question'] = newdataset[i]['question'].replace(tokens[l],'')
     tokens = regexp_tokenize(dataset[i]['question'], variablepattern[0])
     for l in range(len(tokens)):
-        variables.append(tokens[l].lower())
-##          newdataset[i]['question'] = newdataset[i]['question'].replace(tokens[l],'')
+        variables.append(re.sub('\s+?$', '', tokens[l].lower()))
+        if len(tokens[l])>3:
+            dataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
+            newdataset[i]['question'] = newdataset[i]['question'].replace(tokens[l],'')
+    tokens = regexp_tokenize(dataset[i]['question'], operandpattern[0])
+    for l in range(len(tokens)):
+        operands.append(re.sub('\s+?$', '', tokens[l].lower()))
+        if len(tokens[l])>3:
+            dataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
+            newdataset[i]['question'] = newdataset[i]['question'].replace(tokens[l],'')
     tokens = regexp_tokenize(dataset[i]['question'], URLpattern[0])
     for l in range(len(tokens)):
         URLs.append(tokens[l].lower())
+        dataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
         newdataset[i]['question'] = newdataset[i]['question'].replace(tokens[l],'')
+    tokens = regexp_tokenize(dataset[i]['question'], operatorpattern[0])
+    for l in range(len(tokens)):
+        operators.append(tokens[l].lower())
+        dataset[i]['question'] = dataset[i]['question'].replace(tokens[l],'')
+        newdataset[i]['question'] = newdataset[i]['question'].replace(tokens[l],'')
+
 
     #answers
     for j in range(len(dataset[i]['answers'])):
         tokens = regexp_tokenize(dataset[i]['answers'][j], methodpattern[0])
         for l in range(len(tokens)):
             methods.append(tokens[l].lower())
+            dataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
             newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
         tokens = regexp_tokenize(dataset[i]['answers'][j], stringpattern[0])
         for l in range(len(tokens)):
             strings.append(tokens[l].lower())
+            dataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
             newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
         tokens = regexp_tokenize(dataset[i]['answers'][j], commentpattern[0])
         for l in range(len(tokens)):
             comments.append(re.sub('\s+?$', '', tokens[l].lower()))
+            dataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
             newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
         tokens = regexp_tokenize(dataset[i]['answers'][j], variablepattern[0])
         for l in range(len(tokens)):
-            variables.append(tokens[l].lower())
-##          newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
+            variables.append(re.sub('\s+?$', '', tokens[l].lower()))
+            if len(tokens[l])>3:
+                dataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
+                newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
+        tokens = regexp_tokenize(dataset[i]['answers'][j], operandpattern[0])
+        for l in range(len(tokens)):
+            operands.append(re.sub('\s+?$', '', tokens[l].lower()))
+            if len(tokens[l])>3:
+                dataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
+                newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
         tokens = regexp_tokenize(dataset[i]['answers'][j], URLpattern[0])
         for l in range(len(tokens)):
             URLs.append(tokens[l].lower())
+            dataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
+            newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
+        tokens = regexp_tokenize(dataset[i]['answers'][j], operatorpattern[0])
+        for l in range(len(tokens)):
+            operators.append(tokens[l].lower())
+            dataset[i]['answers'][j] = dataset[i]['answers'][j].replace(tokens[l],'')
             newdataset[i]['answers'][j] = newdataset[i]['answers'][j].replace(tokens[l],'')
 
 
@@ -179,18 +215,22 @@ sentences = sentencetokenize(newdataset, pattern)
 
 for sent in sentences:
     for token in word_tokenize(sent):
-        if len(token) > 1 and token not in stop_words and token not in contractions and not re.search("^[\W\d]+$", token) and token not in set(variables):
+        if len(token) > 1 and token not in stop_words and token not in contractions and not re.search("^[\W\d]+$", token) and token not in set(methods+strings+comments+operands+operators+variables+URLs):
             mywords.append(token)
 
-########################################################################
-
-
-
-textDist = FreqDist(methods+strings+comments+URLs+variables+mywords)
+alltokens = set(methods+strings+comments+operands+operators+mywords+variables+URLs)
+textDist = FreqDist(alltokens)
 print('time taken to word_tokenize: %f' %(time.time()-start))
+#####################################################################################################
+
+################          write all POS tags file               ####################################
+with open('POS_tags_of_all_words.txt', encoding="utf-8",mode='w') as f:
+        for w in pythontagger.tag(tokens):
+            f.write("%s\n" % str(w))
+#####################################################################################################
 
 
-#########           checking for irregular words        ####################
+#########           checking for irregular words        ############################################
 
 irregularWords = []
 print('there are ' + str(len(mywords)) + ' english words.')
@@ -204,12 +244,10 @@ for token in mywords:
             irregularWords.append(token)
 print('time taken to check for irregulars: %f' %(time.time()-start))
 
-########################################################################
+####################################################################################################
 
 
-
-
-###################       create top20 irregular words text file      ####################
+###################       create top20 irregular words text file      ##############################
 
 irregularWordsDist = FreqDist(irregularWords)
 ##print("\n Top 20 irregular words")
@@ -231,10 +269,10 @@ with open('top_20_irregulars.txt', encoding="utf-8",mode='w') as f:
 
 print('time taken to consolidate irregulars: %f' %(time.time()-start))
 
-############################################################################################
+######################################################################################################
 
 
-###############             tokenize dataset into sentences               ####################
+###############             tokenize dataset into sentences               ############################
 
 start = time.time()
 
@@ -268,23 +306,30 @@ print('time taken to check irregulars sentences: %f' %(time.time()-start))
 ########################################################################
 
 
-################          write random_10_POStags_with_irregulars file               ####################
+################          write random_10_POStags_with_irregulars file         ####################
 with open('random_10_POStags_with_irregulars.txt', encoding="utf-8",mode='w') as f:
-    for i in range(10):
+    i=0
+    while i < 10:
         r = int(random.random()*len(irregularWordSentence))
-        f.write('\n%s\n' %'#######################################')
-        f.write("%s\n\n" % ('irregular word: '+str(irregularWordSentence[int(r)][0])))
-        irregularSentence = irregularWordSentence[int(r)][1][:]
+        irregularSentence = re.sub(r'^\s+','',irregularWordSentence[int(r)][1][:])
+        irregularSentence = re.sub(r'\s+$','',irregularSentence)
         tokens = list(set(regexp_tokenize(irregularSentence, pattern)))
         for l in range(len(tokens)):
             if len(tokens[l])>3:
-                irregularSentence = re.sub(re.escape(tokens[l]),'',irregularSentence, count = 1)
-                irregularSentence = re.sub(re.escape('\n'),' ', irregularSentence)
-        for token in word_tokenize(irregularWordSentence[int(r)][1]):
+                irregularSentence = re.sub(re.escape(tokens[l]),'',irregularSentence)
+        if len(irregularSentence)<3:
+            continue
+        words = word_tokenize(irregularSentence)
+        if len(words) <5:
+            continue
+        f.write('\n%s\n\n' %'#######################################')
+        f.write("%s\n\n" % ('irregular word: '+str(irregularWordSentence[int(r)][0])))
+        for token in words:
             if token not in tokens:
                 tokens.append(token)
         for w in pythontagger.tag(tokens):
             f.write("%s\n" % str(w))
+        i+=1
     f.write('%s\n' %'#######################################')
 
-########################################################################
+###################################################################################################
