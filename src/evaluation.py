@@ -56,8 +56,8 @@ for path in files:
         posts[filename]["text"] = f.read()
         posts[filename]["newtext"] = copy.deepcopy(posts[filename]["text"])
 
-for key, post in posts.items():
-    print("Analysing post", key)
+for filename, post in posts.items():
+    print("Analysing post", filename)
 
     methods = []
     strings = []
