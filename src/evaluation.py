@@ -121,7 +121,7 @@ for filename, post in posts.items():
         # print("sent:", sent)
         for token in word_tokenize(sent):
             # print("token:", token)
-            if len(token) > 1 and token not in stop_words and token not in contractions and not re.search("^[\W\d]+$", token) and token not in set(methods+strings+comments+operands+operators+variables+URLs):
+            if len(token) > 1 and token not in contractions and not re.search("^[\W\d]+$", token) and token not in set(methods+strings+comments+operands+operators+variables+URLs):
                 mywords.append(token)
 
     alltokens = set(methods+strings+comments+operands+operators+mywords+variables+URLs)
