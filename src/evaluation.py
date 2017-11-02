@@ -44,11 +44,11 @@ def sentencetokenize(text, pattern):
 
 methodpattern = (r"(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD')
 stringpattern = (r"(?:(?<!\w)|r)(?:(?:\"{3}.+?\"{3})|(?:'{3}.+?'{3})|(?:\"(?:(?!\\n)[^\"])+?\")|(?:'(?:(?!\\n)[^'])+?'))(?!\w)",'STRING')
-commentpattern = (r"(?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?:=\\n|\n)",'COMMENT')
+commentpattern = (r"(?:#[^#\n] *?(?!\n)[\S].+?)(?:\n|$)",'COMMENT')
 variablepattern = (r'(?:(?:(?:(?:[a-zA-Z_](?:\.\w|\w)*)(?:\[\w*?:?\w*?\])*? *?, *?)*(?:[a-zA-Z_](?:\.\w|\w)*)(?:\[\w*?:?\w*?\])*?)(?= *=))|[a-zA-Z_](?:\.\w|\w)*_+(?:\.\w|\w)*','VARIABLE')
 operandpattern = (r'(?<=[+\-*/%=><]) *(?:[\w[({][^+\-*/%=><\n]*)|(?:(?:True|False)(?= *?.*?:))', 'OPERAND')
 URLpattern = (r'(?:(?:https?:\/\/)?(?:[\da-z\.-]+)\.(?:[a-z\.]{2,6})(?:[\/\w \.-]*)*\/?)','URL')
-operatorpattern = (r"""(?:[+\-*%=><^!|~&]{1,3})|\b(?:and|if|else|elif|for|while|try|except|finally|with|as|class|not|is|in|or|xor|def)(?= *.*?:)|(?:\\n|\n)\s*(?:break|continue)\s*(?:\\n|\n)|(?:(?<=\n)|(?<=\\n))\s*return(?= .+?\n|\\n)""", 'OPERATOR')
+operatorpattern = (r"""(?:[+\-*%=><^!|~&]{1,3})|\b(?:and|if|else|elif|for|while|try|except|finally|with|as|class|not|is|in|or|xor|def)(?= *.*?:)|(?:\n)\s*(?:break|continue)\s*(?:\n)|(?<=\n)\s*return(?= .+?\n)""", 'OPERATOR')
 
 POS_patterns = [methodpattern,stringpattern,commentpattern,variablepattern,operandpattern,URLpattern,operatorpattern]
 
@@ -73,7 +73,7 @@ for path in files:
         posts[filename]["newtext"] = copy.deepcopy(posts[filename]["text"])
 
 for filename, post in posts.items():
-    print("Analysing post", filename)
+##    print("Analysing post", filename)
 
     methods = []
     strings = []
@@ -121,7 +121,8 @@ for filename, post in posts.items():
         # print("sent:", sent)
         for token in word_tokenize(sent):
             # print("token:", token)
-            if len(token) > 1 and token not in contractions and not re.search("^[\W\d]+$", token) and token not in set(methods+strings+comments+operands+operators+variables+URLs):
+##            if len(token) > 1 and token not in contractions and not re.search("^[\W\d]+$", token) and token not in set(methods+strings+comments+operands+operators+variables+URLs):
+            if not re.search("^[\W\d]+$", token) and token not in set(methods+strings+comments+operands+operators+variables+URLs):
                 mywords.append(token)
 
     alltokens = set(methods+strings+comments+operands+operators+mywords+variables+URLs)
@@ -154,24 +155,47 @@ for filename, post in posts.items():
 
 # print(posts[filename]["repr"])
 results = []
-for filename, post in posts.items():
-    print("")
-    print("Post:", filename)
-    ## --------------- Manual against Tokenizer
-    doc = r.documents[filename] 
-    for word in doc.annotations:
-        
-        print("     Manual annotation:", word)
-        result = 0
-        matches = [x for x in posts[filename]["words"] if x[0].lower() == word[0].lower()]
-        print("         Tokenizer matches:", matches)
-        for match in matches:
-            result = 1
-            # print(match[1].lower(), word.labels.lower())
-            if (match[1].lower() in word[1].lower()) or (word[1].lower() in match[1].lower()):
-                result = 2
-                print("             POS tag match:", word[1].lower())
-        results.append(result)
+truePOS = 0
+falsePOS = 0
+falseNEG = 0
+trueNEG = 0
+with open('evaluation_data.txt', encoding = 'utf-8', mode = 'w') as f:
+    for filename, post in posts.items():
+        f.write("\n")
+        f.write("Post: ")
+        f.write(str(filename))
+        ## --------------- Manual against Tokenizer
+        doc = r.documents[filename] 
+        for word in doc.annotations:
+            
+            f.write("\n     Manual annotation: ")
+            f.write(str(word))
+            result = 0
+            matches = [x for x in posts[filename]["words"] if x[0].lower() == word[0].lower()]
+            f.write("\n         Tokenizer matches: ")
+            f.write(str(matches))
+            for match in matches:
+                result = 1
+                # print(match[1].lower(), word.labels.lower())
+                if match[1].lower() == 'PRP$'.lower():
+                    match = (match[0],'PRP_')
+                if (match[1].lower() in word[1].lower()) or (word[1].lower() in match[1].lower()):
+                    result = 2
+                    f.write("\n             true positive POS tag match: ")
+                    f.write(word[1].lower())
+                    truePOS += 1
+                elif match[1]:
+                    falsePOS += 1
+                    f.write("\n             false positive POS tag match: ")
+                    print("     Manual annotation: ",word)
+                    print("         Tokenizer matches: ",matches)
+                    print("             false positive POS tag match: ", word[1].lower())
+                    f.write(word[1].lower())
+                elif pythontagger.tag([match[0]]) == word[1]:
+                    falseNEG += 1
+                    f.write("\n             false negative POS tag match: ")
+                    f.write(word[1].lower())
+            results.append(result)
 
 
     # # --------------- Tokenizer against Manual
@@ -198,12 +222,38 @@ for filename, post in posts.items():
     #     results.append(result)
 
 
-total = len(results)
-unique, counts = np.unique(results, return_counts=True)
-results = np.asarray((unique, counts)).T
-results[1][1] = results[1][1] + results[2][1]
-print(results)
-print("Total:", total)
-# for word in posts[filename]["words"]:
-#     print("Tokenizer:", word[0], word[1])
+    total = len(results)
+    unique, counts = np.unique(results, return_counts=True)
+    results = np.asarray((unique, counts)).T
+    results[1][1] = results[1][1] + results[2][1]
+    f.write('\n')
+    f.write(str(results))
+    f.write('\n')
+    print(results)
+    print("\nTotal: ",total)
+    f.write(str(total))
+    f.write('\nTrue Positives: ')
+    print('True Positives: ',truePOS)
+    f.write(str(truePOS))
+    f.write('\nFalse Positives: ')
+    print('False Positives: ',falsePOS)
+    f.write(str(falsePOS))
+    f.write('\nFalse Negatives: ')
+    print('False Negatives: ',falseNEG)
+    f.write(str(falseNEG))
+    # for word in posts[filename]["words"]:
+    #     print("Tokenizer:", word[0], word[1])
+
+    precision = truePOS/(truePOS+falsePOS)
+    recall = truePOS/(truePOS+falseNEG)
+    f1 = (2*truePOS)/(2*truePOS+falsePOS+falseNEG)
+    f.write("\nPrecision: ")
+    f.write(str(precision))
+    f.write("\nRecall: ")
+    f.write(str(recall))
+    f.write("\nF1 Score: ")
+    f.write(str(f1))
+    print('Precision: ',precision)
+    print('Recall: ',recall)
+    print('F1 Score: ',f1)
     
