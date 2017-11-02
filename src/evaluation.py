@@ -17,6 +17,22 @@ files = glob.glob("../annotations/*.txt")
 def sentencetokenize(text, pattern):
     patt = r'(?: *)(?:' + pattern + r')'
     sentences = []
+    p=0
+    j=0
+    while j < len(text):
+        if text[j] == '\n':
+            if j == 0:
+                text = text[1:]
+                continue
+            elif j < len(text) - 1 and text[j+1] == '\n':
+                text = text[:j]+''+text[j+1:]
+                p=j
+                continue
+            else:
+                text = text[:j]+'NEWlineHERE. NEWlineHERE'+text[j+1:]
+                j+=23
+            p = j
+        j+=1
     for sent in sent_tokenize(text):
         if len(sent)>2:
             sent = re.sub(r'NEWlineHERE\.$','',sent)
@@ -131,17 +147,17 @@ for filename, post in posts.items():
     # --------------- Manual against Tokenizer
     doc = r.documents[filename] 
     for word in doc.annotations:
-        print("Manual:", word.repr, word.labels)
+##        print("Manual:", word.repr, word.labels)
         result = 0
         matches = [x for x in posts[filename]["words"] if x[0].lower() == word.repr.lower()]
-        print("     ", matches)
+##        print("     ", matches)
         for match in matches:
             result = 1
-            print("Token matches:", match)
+##            print("Token matches:", match)
             # print(match[1].lower(), word.labels.lower())
             if match[1].lower().split("_")[0] == word.labels.lower():
                 result = 2
-                print("POS tag match !")
+##                print("POS tag match !")
         results.append(result)
 
 
