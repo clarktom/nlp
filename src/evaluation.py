@@ -11,6 +11,7 @@ import string
 import time
 import copy
 import glob
+import numpy as np
 files = glob.glob("../annotations/*.txt")
 
 def sentencetokenize(text, pattern):
@@ -126,20 +127,52 @@ doc = r.documents[filename] 			# get document with key 001
 # print(posts[filename]["repr"])
 results = []
 for filename, post in posts.items():
+
+    # --------------- Manual against Tokenizer
     doc = r.documents[filename] 
     for word in doc.annotations:
         print("Manual:", word.repr, word.labels)
         result = 0
-        matches = [x for x in posts[filename]["words"] if x[0] == word.repr]
+        matches = [x for x in posts[filename]["words"] if x[0].lower() == word.repr.lower()]
         print("     ", matches)
         for match in matches:
             result = 1
-            print("match:", match)
+            print("Token matches:", match)
             # print(match[1].lower(), word.labels.lower())
-            if match[1].lower() == word.labels.lower():
+            if match[1].lower().split("_")[0] == word.labels.lower():
                 result = 2
+                print("POS tag match !")
         results.append(result)
-print(results)
+
+
+    # --------------- Tokenizer against Manual
+    # for word in posts[filename]["words"]:
+    #     print("Tokenizer:", word[0], word[1])
+    #     result = 0
+    #     doc = r.documents[filename]
+    #     ann = []
+    #     for w in doc.annotations:
+    #         # print(w.repr)
+    #         # print(w.labels)
+    #         ann.append((w.repr, w.labels))
+    #         # print(word.repr, word.labels)
+    #     # print(ann)
+    #     matches = [x for x in ann if x[0].lower() == word[0].lower()]
+    #     print("     ", matches)
+    #     for match in matches:
+    #         result = 1
+    #         print("Token matches:", match)
+    #         # print(match[1].lower(), word.labels.lower())
+    #         if match[1].lower().split("_")[0] == word[1].lower():
+    #             result = 2
+    #             print("POS tag match !")
+    #     results.append(result)
+
+
+
+unique, counts = np.unique(results, return_counts=True)
+print(np.asarray((unique, counts)).T)
+print(len(results))
 
 
         # for word in posts[filename]["words"]:
