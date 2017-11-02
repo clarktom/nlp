@@ -1,0 +1,955 @@
+Post 1
+What does the if __name__ == "__main__": do?
+
+# Threading example
+import time, thread
+
+def myfunction(string, sleeptime, lock, *args):
+    while 1:
+        lock.acquire()
+        time.sleep(sleeptime)
+        lock.release()
+        time.sleep(sleeptime)
+if __name__ == "__main__":
+    lock = thread.allocate_lock()
+    thread.start_new_thread(myfunction, ("Thread #: 1", 2, lock))
+    thread.start_new_thread(myfunction, ("Thread #: 2", 2, lock)
+Post 2
+if __name__ == "__main__" is the part that runs when the script is run from (say) the command line using a command like python myscript.py.
+Post 3
+You can make the file usable as a script as well as an importable module.
+
+fibo.py (a module named fibo)
+
+# Other modules can IMPORT this MODULE to use the function fib
+def fib(n):    # write Fibonacci series up to n
+    a, b = 0, 1
+    while b < n:
+        print(b, end=' ')
+        a, b = b, a+b
+    print()
+
+# This allows the file to be used as a SCRIPT
+if __name__ == "__main__":
+    import sys
+    fib(int(sys.argv[1]))
+
+Reference: https://docs.python.org/3.5/tutorial/modules.html
+Post 4
+An alternative:
+
+z = x.copy()
+z.update(y)
+Post 5
+Python 3.5 (PEP 448) allows a nicer syntax option:
+
+x = {'a': 1, 'b': 1}
+y = {'a': 2, 'c': 2}
+final = {**x, **y} 
+final
+# {'a': 2, 'b': 1, 'c': 2}
+
+Or even
+
+final = {'a': 1, 'b': 1, **x, **y}
+Post 6
+While the question has already been answered several times, this simple solution to the problem has not been listed yet.
+
+x = {'a':1, 'b': 2}
+y = {'b':10, 'c': 11}
+z4 = {}
+z4.update(x)
+z4.update(y)
+
+It is as fast as z0 and the evil z2 mentioned above, but easy to understand and change.
+Post 7
+
+
+For example, if passed the following:
+
+a = []
+
+How do I check to see if a is empty?
+Post 8
+
+
+if not a:
+  print("List is empty")
+
+Using the implicit booleanness of the empty list is quite pythonic.
+Post 9
+
+
+I prefer it explicitly:
+
+if len(li) == 0:
+    print('the list is empty')
+
+This way it's 100% clear that li is a sequence (list) and we want to test its size. My problem with if not li: ... is that it gives the false impression that li is a boolean variable.
+Post 10
+
+
+I have seen the below as preferred, as it will catch the null list as well:
+
+if not a:
+    print "The list is empty or null"
+Post 11
+
+
+len() is an O(1) operation for Python lists, strings, dicts, and sets. Python internally keeps track of the number of elements in these containers.
+
+JavaScript has a similar notion of truthy/falsy.
+Post 12
+
+
+I'm looking for a string.contains or string.indexof method in Python.
+
+I want to do:
+
+if not somestring.contains("blah"):
+   continue
+Post 13
+
+
+You can use the in operator:
+
+if "blah" not in somestring: 
+    continue
+Post 14
+
+
+Another way to find whether a string contains a few characters or not with the Boolean return value (i.e. True or `False):
+
+str1 = "This be a string"
+find_this = "tr"
+if find_this in str1:
+    print find_this, " is been found in ", str1
+else:
+    print find_this, " is not found in ", str1
+Post 15
+
+
+You can use time.strftime():
+
+>>> from time import gmtime, strftime
+>>> strftime("%Y-%m-%d %H:%M:%S", gmtime())
+'2009-01-05 22:14:39'
+Post 16
+
+
+>>> from datetime import datetime
+>>> datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+For this example, the output will be like this: '2013-09-18 11:16:32'
+
+The format for strftime is at:
+https://docs.python.org/3/library/time.html#time.strftime
+Post 17
+
+
+import datetime
+date_time = str(datetime.datetime.now())
+date = date_time.split()[0]
+time = date_time.split()[1]
+
+date will print date and time will print time.
+Post 18
+
+
+items = []
+items.append("apple")
+items.append("orange")
+items.append("banana")
+
+# FAKE METHOD::
+items.amount()  # Should return 3
+
+How do I get the number of elements in the list?
+Post 19
+
+
+The len() function can be used with a lot of types in Python - both built-in types and library types.
+
+>>> len([1,2,3])
+3
+Post 20
+
+
+It's because any iterable can be joined, not just lists, but the result and the "joiner" are always strings.
+
+E.G:
+
+import urllib2
+print '\n############\n'.join(
+    urllib2.urlopen('http://data.stackexchange.com/users/7095'))
+Post 21
+How can I raise an exception in Python so that it can later be caught via an except block?
+Post 22
+
+
+    DON'T DO THIS. Raising a bare Exception is absolutely not the right thing to do; see Aaron Hall's excellent answer instead.
+
+Can't get much more pythonic than this:
+
+raise Exception("I know python!")
+
+See the raise statement docs for python if you'd like more info.
+Post 23
+
+
+from datetime import datetime
+
+datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+
+The resulting datetime object is timezone-naive.
+
+Links:
+
+    Python documentation for strptime: Python 2, Python 3
+
+    Python documentation for strftime format mask: Python 2, Python 3
+
+    This is also a really nice reference for strftime
+
+Notes:
+
+    strptime = "string parse time"
+    strftime = "string format time"
+    Pronounce it out loud today & you won't have to search for it again in 6 months.
+Post 24
+
+
+You can use easy_date to make it easy:
+
+import date_converter
+converted_date = date_converter.string_to_datetime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+Post 25
+What is the Python equivalent of Perl's chomp function, which removes the last character of a string if it is a newline?
+Post 26
+
+
+And I would say the "pythonic" way to get lines without trailing newline characters is splitlines().
+
+>>> text = "line 1\nline 2\r\nline 3\nline 4"
+>>> text.splitlines()
+['line 1', 'line 2', 'line 3', 'line 4']
+Post 27
+
+
+"line 1\nline 2\r\n...".replace('\n', '').replace('\r', '')
+>>> 'line 1line 2...'
+
+or you could always get geekier with regexps :)
+
+have fun!
+Post 28
+
+
+you can use strip:
+
+line = line.strip()
+
+demo:
+
+>>> "\n\n hello world \n\n".strip()
+'hello world'
+Post 29
+
+
+import re
+
+r_unwanted = re.compile("[\n\t\r]")
+r_unwanted.sub("", your_text)
+Post 30
+
+
+Use join:
+
+>>> sentence = ['this','is','a','sentence']
+>>> '-'.join(sentence)
+'this-is-a-sentence'
+Post 31
+I prefer using the glob module, as it does pattern matching and expansion.
+
+import glob
+print(glob.glob("/home/adam/*.txt"))
+
+Will return a list with the queried files:
+
+['/home/adam/file1.txt', '/home/adam/file2.txt', .... ]
+Post 32
+import os
+os.listdir("somedirectory")
+
+will return a list of all files and directories in "somedirectory".
+Post 33
+A one-line solution to get only list of files (no subdirectories):
+
+filenames = next(os.walk(path))[2]
+
+or absolute pathnames:
+
+paths = [os.path.join(path,fn) for fn in next(os.walk(path))[2]]
+Post 34
+def list_files(path):
+    # returns a list of names (with extension, without full path) of all files 
+    # in folder path
+    files = []
+    for name in os.listdir(path):
+        if os.path.isfile(os.path.join(path, name)):
+            files.append(name)
+    return files 
+Post 35
+Python 3.5 introduced new, faster method for walking through the directory - os.scandir().
+
+Example:
+
+for file in os.scandir('/usr/bin'):
+    line = ''
+    if file.is_file():
+        line += 'f'
+    elif file.is_dir():
+        line += 'd'
+    elif file.is_symlink():
+        line += 'l'
+    line += '\t'
+    print("{}{}".format(line, file.name))
+Post 36
+You should use os module for listing directory content.os.listdir(".") returns all the contents of the directory. We iterate over the result and append to the list.
+
+import os
+
+content_list = []
+
+for content in os.listdir("."): # "." means current directory
+    content_list.append(content)
+
+print content_list
+Post 37
+If you are looking for a Python implementation of find, this is a recipe I use rather frequently:
+
+from findtools.find_files import (find_files, Match)
+
+# Recursively find all *.sh files in **/usr/bin**
+sh_files_pattern = Match(filetype='f', name='*.sh')
+found_files = find_files(path='/usr/bin', match=sh_files_pattern)
+
+for found_file in found_files:
+    print found_file
+
+So I made a PyPI package out of it and there is also a GitHub repository. I hope that someone finds it potentially useful for this code.
+Post 38
+Using generators
+
+import os
+def get_files(search_path):
+     for (dirpath, _, filenames) in os.walk(search_path):
+         for filename in filenames:
+             yield os.path.join(dirpath, filename)
+list_files = get_files('.')
+for filename in list_files:
+    print(filename)
+Post 39
+def flatten(l, a):
+    for i in l:
+        if isinstance(i, list):
+            flatten(i, a)
+        else:
+            a.append(i)
+    return a
+
+print(flatten([[[1, [1,1, [3, [4,5,]]]], 2, 3], [4, 5],6], []))
+
+# [1, 1, 1, 3, 4, 5, 2, 3, 4, 5, 6]
+Post 40
+Cleaned up @Deleet example
+
+from collections import Iterable
+
+def flatten(l, a=[]):
+    for i in l:
+        if isinstance(i, Iterable):
+            flatten(i, a)
+        else:
+            a.append(i)
+    return a
+
+daList = [[1,4],[5,6],[23,22,234,2],[2], [ [[1,2],[1,2]],[[11,2],[11,22]] ] ]
+
+print(flatten(daList))
+
+Example: https://repl.it/G8mb/0
+Post 41
+Here's a one-liner for you:
+
+singleton = lambda c: c()
+
+Here's how you use it:
+
+@singleton
+class wat(object):
+    def __init__(self): self.x = 1
+    def get_x(self): return self.x
+
+assert wat.get_x() == 1
+
+Your object gets instantiated eagerly. This may or may not be what you want.
+Post 42
+How do I access the index itself for a list like the following?
+
+ints = [8, 23, 45, 12, 78]
+
+When I loop through it using a for loop, how do I access the loop index, from 1 to 5 in this case?
+Post 43
+for i in range(len(ints)):
+   print i, ints[i]
+Post 44
+It's pretty simple to start it from 1 other than 0:
+
+for index in enumerate(iterable, start=1):
+   print index
+Post 45
+You can do that using type():
+
+>>> a = []
+>>> type(a)
+<type 'list'>
+>>> f = ()
+>>> type(f)
+<type 'tuple'>
+Post 46
+In case you also need the index:
+
+foo = ['a', 'b', 'c', 'd', 'e']
+from random import randrange
+random_index = randrange(0,len(foo))
+print foo[random_index]
+Post 47
+if you need the index just use:
+
+import random
+foo = ['a', 'b', 'c', 'd', 'e']
+print int(random.random() * len(foo))
+print foo[int(random.random() * len(foo))]
+
+random.choice does the same:)
+Post 48
+How do I concatenate two lists in Python?
+
+Example:
+
+listone = [1, 2, 3]
+listtwo = [4, 5, 6]
+
+Expected outcome:
+
+joinedlist == [1, 2, 3, 4, 5, 6]
+Post 49
+Python makes this ridiculously easy.
+
+mergedlist = listone + listtwo
+Post 50
+You can use sets to obtain merged list of unique values
+
+mergedlist = list(set(listone + listtwo))
+Post 51
+You could also use extend in order to add a list add the end of another one:
+
+listone = [1,2,3]
+listtwo = [4,5,6]
+mergedlist = []
+mergedlist.extend(listone)
+mergedlist.extend(listtwo)
+Post 52
+new_list = list(old_list)
+Post 53
+Python's idiom for doing this is newList = oldList[:]
+Post 54
+>>> def gen():
+...     def init():
+...         return 0
+...     i = init()
+...     while True:
+...         val = (yield i)
+...         if val=='restart':
+...             i = init()
+...         else:
+...             i += 1
+
+>>> g = gen()
+>>> g.next()
+0
+>>> g.next()
+1
+>>> g.next()
+2
+>>> g.next()
+3
+>>> g.send('restart')
+0
+>>> g.next()
+1
+>>> g.next()
+2
+Post 55
+You can define a function that returns your generator
+
+def f():
+  def FunctionWithYield(generator_args):
+    code here...
+
+  return FunctionWithYield
+
+Now you can just do as many times as you like:
+
+for x in f()(generator_args): print(x)
+for x in f()(generator_args): print(x)
+Post 56
+Yes, you can use it that way :
+
+is_fat = True
+state = "fat" if is_fat else "not fat"
+Post 57
+Easy peasy:
+
+'String ok' if value == 'ok' else 'String nok'
+
+It's a conditional expression.
+Post 58
+This is how I run my commands. This code has everything you need pretty much
+
+from subprocess import Popen, PIPE
+cmd = "ls -l ~/"
+p = Popen(cmd , shell=True, stdout=PIPE, stderr=PIPE)
+out, err = p.communicate()
+print "Return code: ", p.returncode
+print out.rstrip(), err.rstrip()
+Post 59
+https://docs.python.org/2/library/subprocess.html
+
+...or for a very simple command:
+
+import os
+os.system('cat testfile')
+Post 60
+os.system has been superseded by the subprocess module. Use subproccess instead.
+Post 61
+You can use Popen, and then you can check the procedure's status:
+
+from subprocess import Popen
+
+proc = Popen(['ls', '-l'])
+if proc.poll() is None:
+    proc.kill()
+
+Check out subprocess.Popen.
+Post 62
+class switch(object):
+    value = None
+    def __new__(class_, value):
+        class_.value = value
+        return True
+
+def case(*args):
+    return any((arg == switch.value for arg in args))
+
+Usage:
+
+while switch(n):
+    if case(0):
+        print "You typed zero."
+        break
+    if case(1, 4, 9):
+        print "n is a perfect square."
+        break
+    if case(2):
+        print "n is an even number."
+    if case(2, 3, 5, 7):
+        print "n is a prime number."
+        break
+    if case(6, 8):
+        print "n is an even number."
+        break
+    print "Only single-digit numbers are allowed."
+    break
+
+Tests:
+
+n = 2
+#Result:
+#n is an even number.
+#n is a prime number.
+n = 11
+#Result:
+#Only single-digit numbers are allowed.
+Post 63
+# simple case alternative
+
+some_value = 5.0
+
+# this while loop block simulates a case block
+
+# case
+while True:
+
+    # case 1
+    if some_value > 5:
+        print ('Greater than five')
+        break
+
+    # case 2
+    if some_value == 5:
+        print ('Equal to five')
+        break
+
+    # else case 3
+    print ( 'Must be less than 5')
+    break
+Post 64
+import os
+os.path.exists(path) # returns whether the path (dir or file) exists or not
+os.path.isfile(path) # returns whether the file exists or not
+Post 65
+In Python 3.4 the language provides a new module to manage files:
+
+import pathlib
+path = pathlib.Path('path/to/file')
+if path.is_file(): # If you want to check a directory: path.is_dir()
+    # If it is true, return true on your code.
+Post 66
+In Python, how do you get the last element of a list?
+Post 67
+You can also do:
+
+alist.pop()
+
+It depends on what you want to do with your list because the pop() method will delete the last element.
+Post 68
+mylist = [ 1 , 2 , 3 , 4 , 5]
+
+#------------------------------------
+# Method-1 : Last index
+#------------------------------------
+
+print(mylist[-1])
+
+
+#------------------------------------
+# Method-2 : Using len 
+#------------------------------------
+
+print(mylist[len(mylist) - 1])
+
+
+#------------------------------------
+# Method-3 : Using pop, pop will remove the last 
+#            element from the list.
+#------------------------------------
+
+print(mylist.pop())
+Post 69
+You can also use the code below, if you do not want to get IndexError when the list is empty.
+
+next(reversed(some_list), None)
+Post 70
+if you want to just get the last value of list, you should use :
+
+your_list[-1]
+
+BUT if you want to get value and also remove it from list, you can use :
+
+your_list.pop()
+Post 71
+This is not the answer to the question in the title, but it's the answer on how to print on the same line:
+
+import sys
+for i in xrange(0,10):
+   sys.stdout.write(".")
+   sys.stdout.flush()
+Post 72
+Using functools.partial to create a new function called printf
+
+>>> import functools
+
+>>> printf = functools.partial(print, end="")
+
+>>> printf("Hello world\n")
+Hello world
+
+Easy way to wrap a function with default parameters.
+Post 73
+print function in python automatically generates a new line. You could try:
+print("Hello World", end="")
+Post 74
+You can do it with end argument of print. In python3 range() returns iterator and xrange() doesn't exist.
+
+for i in range(10): print('.', end='')
+Post 75
+You can try:
+
+import sys
+import time
+# Keeps the initial message in buffer.
+sys.stdout.write("\rfoobar bar black sheep")
+sys.stdout.flush()
+# Wait 2 seconds
+time.sleep(2)
+# Replace the message with a new one.
+sys.stdout.write("\r"+'hahahahaaa             ')
+sys.stdout.flush()
+# Finalize the new message by printing a return carriage.
+sys.stdout.write('\n')
+Post 76
+i recently had the same problem..
+
+i solved it by doing:
+
+import sys, os
+
+# reopen stdout with "newline=None".
+# in this mode,
+# input:  accepts any newline character, outputs as '\n'
+# output: '\n' converts to os.linesep
+
+sys.stdout = os.fdopen(sys.stdout.fileno(), "w", newline=None)
+
+for i in range(1,10):
+        print(i)
+
+this works on both unix and windows ... have not tested it on macosx ...
+
+hth
+Post 77
+The eval function lets a python program run python code within itself.
+
+eval example (interactive shell):
+
+>>> x = 1
+>>> eval('x + 1')
+2
+>>> eval('x')
+1
+Post 78
+To uninstall an .egg you need to rm -rf the egg (it might be a directory) and remove the matching line from site-packages/easy-install.pth
+Post 79
+For a list ["foo", "bar", "baz"] and an item in the list "bar", what's the cleanest way to get its index (1) in Python?
+Post 80
+>>> ["foo", "bar", "baz"].index("bar")
+1
+Post 81
+index() returns the first index of value!
+
+    # index(...)
+    # L.index(value, [start, [stop]]) -> integer -- return first index of value
+
+
+def all_indices(value, qlist):
+    indices = []
+    idx = -1
+    while True:
+        try:
+            idx = qlist.index(value, idx+1)
+            indices.append(idx)
+        except ValueError:
+            break
+    return indices
+
+all_indices("foo", ["foo","bar","baz","foo"])
+Post 82
+To get all indices:
+
+ indices = [i for i,x in enumerate(xs) if x == 'foo']
+Post 83
+A problem will arise if the element is not in the list. This function handles the issue:
+
+# if element is found it returns index of element else returns None
+
+def find_element_in_list(element, list_element):
+    try:
+        index_element = list_element.index(element)
+        return index_element
+    except ValueError:
+        return None
+Post 84
+If you want all indexes, then you can use numpy:
+
+import numpy as np
+
+array = [1,2,1,3,4,5,1]
+item = 1
+np_array = np.array(array)    
+item_index = np.where(np_array==item)
+print item_index
+# Out: (array([0, 2, 6], dtype=int64),)
+Post 85
+Possible solution:
+
+>>> a = [1.0, 3.2, -2.5, -3.1]
+>>> i = -1.5
+>>> diff = [(abs(i - x),idx) for (idx,x) in enumerate(a)]
+>>> diff
+[(2.5, 0), (4.7, 1), (1.0, 2), (1.6, 3)]
+>>> diff.sort()
+>>> diff
+[(1.0, 2), (1.6, 3), (2.5, 0), (4.7, 1)]
+
+You'll have the index of nearest value in diff[0][1]
+Post 86
+def finder(myList, target)
+    diff = ''
+    index = None
+    for i,num in enumerate(myList):
+        if abs(target - num) < diff:
+            diff = abs(target - num)
+            index = i
+    return index
+
+Hope this helps
+
+EDIT:
+
+If you'd like a one-liner, then you might like this better:
+
+min(L, key=lambda x: abs(target-x))
+Post 87
+In python, an empty list evaluates to False.
+
+if not c:
+   print "The list is empty"
+else:
+   print "The list is not empty"
+Post 88
+s = "Kilometer"
+print(s.lower())
+
+The official documentation is str.lower().
+Post 89
+Reverse a string in python without using reversed() or [::-1]
+
+def reverse(test):
+    n = len(test)
+    x=""
+    for i in range(n-1,-1,-1):
+        x += test[i]
+    return x
+Post 90
+def flatten(alist):
+    if alist == []:
+        return []
+    elif type(alist) is not list:
+        return [alist]
+    else:
+        return flatten(alist[0]) + flatten(alist[1:])
+Post 91
+enumerate() makes this prettier:
+
+for index, value in enumerate(S):
+    print index, value
+
+See here for more.
+Post 92
+class Materials:
+    Shaded, Shiny, Transparent, Matte = range(4)
+
+>>> print Materials.Matte
+3
+Post 93
+You need to make the second element a 1-tuple, eg:
+
+a = ('2',)
+b = 'z'
+new = a + (b,)
+Post 94
+>>> d = {'key':'value'}
+>>> print(d)
+{'key': 'value'}
+>>> d['mynewkey'] = 'mynewvalue'
+>>> print(d)
+{'mynewkey': 'mynewvalue', 'key': 'value'}
+Post 95
+>>> x = {1:2}
+>>> print x
+{1: 2}
+
+>>> x.update({3:4})
+>>> print x
+{1: 2, 3: 4}
+Post 96
+In Python 2.7, simply do:
+
+from collections import OrderedDict
+# regular unsorted dictionary
+d = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
+
+# dictionary sorted by key
+OrderedDict(sorted(d.items(), key=lambda t: t[0]))
+OrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])
+
+# dictionary sorted by value
+OrderedDict(sorted(d.items(), key=lambda t: t[1]))
+OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])
+
+copy-paste from : http://docs.python.org/dev/library/collections.html#ordereddict-examples-and-recipes
+
+Enjoy ;-)
+Post 97
+class Switch:
+    def __init__(self, value): self._val = value
+    def __enter__(self): return self
+    def __exit__(self, type, value, traceback): return False # Allows traceback to occur
+    def __call__(self, cond, *mconds): return self._val in (cond,)+mconds
+
+from datetime import datetime
+with Switch(datetime.today().weekday()) as case:
+    if case(0):
+        # Basic usage of switch
+        print("I hate mondays so much.")
+        # Note there is no break needed here
+    elif case(1,2):
+        # This switch also supports multiple conditions (in one line)
+        print("When is the weekend going to be here?")
+    elif case(3,4): print("The weekend is near.")
+    else:
+        # Default would occur here
+        print("Let's go have fun!") # Didn't use case for example purposes
+Post 98
+# simple case alternative
+
+some_value = 5.0
+
+# this while loop block simulates a case block
+
+# case
+while True:
+
+    # case 1
+    if some_value > 5:
+        print ('Greater than five')
+        break
+
+    # case 2
+    if some_value == 5:
+        print ('Equal to five')
+        break
+
+    # else case 3
+    print ( 'Must be less than 5')
+    break
+Post 99
+You can make use of the reversed function for this as:
+
+>>> array=[0,10,20,40]
+>>> for i in reversed(array):
+...     print(i)
+
+Note that reversed(...) does not return a list. You can get a reversed list using list(reversed(array)).
+Post 100
+>>> L = [0,10,20,40]
+>>> L.reverse()
+>>> L
+[40, 20, 10, 0]
+
+Or
+
+>>> L[::-1]
+[40, 20, 10, 0]
