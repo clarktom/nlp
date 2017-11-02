@@ -1,0 +1,23 @@
+T1	JJ 8 16	Possible
+T2	NN 17 25	solution
+T3	Variable 32 33	a
+T4	Variable 63 64	i
+T5	Variable 76 80	diff
+T7	Method 184 195	diff.sort()
+T8	Operand 36 58	[1.0, 3.2, -2.5, -3.1]
+T9	Operand 83 129	[(abs(i - x),idx) for (idx,x) in enumerate(a)]
+T10	Operand 67 71	-1.5
+T11	Operator 34 35	=
+T12	Operator 65 66	=
+T13	Operator 81 82	=
+T6	Variable 134 138;139 179	diff [(2.5, 0), (4.7, 1), (1.0, 2), (1.6, 3)]
+T14	Variable 200 204;205 245	diff [(1.0, 2), (1.6, 3), (2.5, 0), (4.7, 1)]
+T15	Variable 289 299	diff[0][1]
+T16	PRP 247 250	You
+T17	VBZ 254 258	have
+T18	DT 259 262	the
+T19	NN 263 268	index
+T20	NN 280 285	value
+T21	IN 286 288	in
+T22	IN 269 271	of
+T23	JJS 272 279	nearest

@@ -1,0 +1,9 @@
+Post 27
+
+
+"line 1\nline 2\r\n...".replace('\n', '').replace('\r', '')
+>>> 'line 1line 2...'
+
+or you could always get geekier with regexps :)
+
+have fun!

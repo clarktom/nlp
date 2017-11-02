@@ -1,0 +1,12 @@
+Post 18
+
+
+items = []
+items.append("apple")
+items.append("orange")
+items.append("banana")
+
+# FAKE METHOD::
+items.amount()  # Should return 3
+
+How do I get the number of elements in the list?

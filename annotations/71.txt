@@ -1,0 +1,7 @@
+Post 71
+This is not the answer to the question in the title, but it's the answer on how to print on the same line:
+
+import sys
+for i in xrange(0,10):
+   sys.stdout.write(".")
+   sys.stdout.flush()

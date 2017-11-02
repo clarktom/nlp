@@ -1,0 +1,11 @@
+Post 38
+Using generators
+
+import os
+def get_files(search_path):
+     for (dirpath, _, filenames) in os.walk(search_path):
+         for filename in filenames:
+             yield os.path.join(dirpath, filename)
+list_files = get_files('.')
+for filename in list_files:
+    print(filename)

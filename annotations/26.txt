@@ -1,0 +1,8 @@
+Post 26
+
+
+And I would say the "pythonic" way to get lines without trailing newline characters is splitlines().
+
+>>> text = "line 1\nline 2\r\nline 3\nline 4"
+>>> text.splitlines()
+['line 1', 'line 2', 'line 3', 'line 4']

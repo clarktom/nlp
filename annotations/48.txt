@@ -1,0 +1,11 @@
+Post 48
+How do I concatenate two lists in Python?
+
+Example:
+
+listone = [1, 2, 3]
+listtwo = [4, 5, 6]
+
+Expected outcome:
+
+joinedlist == [1, 2, 3, 4, 5, 6]

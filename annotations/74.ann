@@ -1,0 +1,23 @@
+T1	PRP 8 11	You
+T2	MD 12 15	can
+T3	VB 16 18	do
+T4	PRP 19 21	it
+T5	IN 22 26	with
+T6	NNP 53 60	python3
+T7	Method 61 68	range()
+T8	Method 90 98	xrange()
+T9	Method 135 153	print('.', end='')
+T10	Method 124 133	range(10)
+T11	Operator 115 118	for
+T12	Operator 121 123	in
+T13	IN 50 52	In
+T14	VBZ 69 76	returns
+T15	NN 77 85	iterator
+T16	VBP 27 30	end
+T17	NN 31 39	argument
+T18	IN 40 42	of
+T19	VB 43 48	print
+T20	CC 86 89	and
+T21	VBP 99 106	doesn't
+T22	NN 107 112	exist
+T23	Variable 119 120	i

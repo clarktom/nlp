@@ -1,0 +1,58 @@
+T1	Method 215 224	switch(n)
+T2	Method 133 144	case(*args)
+T3	Method 157 199	any((arg == switch.value for arg in args))
+T4	Method 55 77	__new__(class_, value)
+T5	Method 14 28	switch(object)
+T6	Comment 707 746	#Only single-digit numbers are allowed.
+T7	Comment 698 706	#Result:
+T8	Comment 638 646	#Result:
+T9	Comment 647 668	#n is an even number.
+T10	Comment 669 690	#n is a prime number.
+T11	Variable 691 692	n
+T12	Operand 695 697	11
+T13	Operand 636 637	2
+T14	Variable 632 633	n
+T15	NNS 624 629	Tests
+T16	Operator 617 622	break
+T17	Operator 556 561	break
+T18	VB 566 571	print
+T19	VB 519 524	print
+T20	Operator 486 491	break
+T21	VB 449 454	print
+T22	VB 387 392	print
+T23	String 572 612	"Only single-digit numbers are allowed."
+T24	String 525 547	"n is an even number."
+T25	Method 499 509	case(6, 8)
+T26	Operator 496 498	if
+T27	String 455 477	"n is a prime number."
+T28	Method 423 439	case(2, 3, 5, 7)
+T29	Operator 420 422	if
+T30	Operator 357 362	break
+T31	VB 250 255	print
+T32	Operator 282 287	break
+T33	VB 318 323	print
+T34	Operator 150 156	return
+T35	Operator 116 122	return
+T36	Variable 87 99	class_.value
+T37	Variable 34 39	value
+T38	Operator 8 13	class
+T39	Operand 102 107	value
+T40	Operand 42 46	None
+T41	Operand 123 127	True
+T42	NN 201 206	Usage
+T43	Operator 209 214	while
+T44	Operator 230 232	if
+T45	Operator 129 132	def
+T46	Operator 51 54	def
+T47	Method 233 240	case(0)
+T48	String 256 273	"You typed zero."
+T49	Method 295 308	case(1, 4, 9)
+T50	String 324 348	"n is a perfect square."
+T51	Method 370 377	case(2)
+T52	String 393 415	"n is an even number."
+T53	Operator 367 369	if
+T54	Operator 292 294	if
+T55	Operator 40 41	=
+T56	Operator 100 101	=
+T57	Operator 634 635	=
+T58	Operator 693 694	=

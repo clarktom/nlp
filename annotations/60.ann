@@ -1,0 +1,11 @@
+T1	UNK 8 17	os.system
+T2	VBD 27 37	superseded
+T3	NN 45 55	subprocess
+T4	NN 56 62	module
+T5	NN 68 79	subproccess
+T6	VBZ 18 21	has
+T7	VBN 22 26	been
+T8	IN 38 40	by
+T9	DT 41 44	the
+T10	VB 64 67	Use
+T11	RB 80 87	instead

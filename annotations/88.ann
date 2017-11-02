@@ -1,0 +1,9 @@
+T1	Variable 8 9	s
+T2	Operator 10 11	=
+T3	String 12 23	"Kilometer"
+T4	Method 24 40	print(s.lower())
+T5	DT 42 45	The
+T6	JJ 46 54	official
+T7	NN 55 68	documentation
+T8	VBZ 69 71	is
+T9	Method 72 83	str.lower()

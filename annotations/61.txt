@@ -1,0 +1,10 @@
+Post 61
+You can use Popen, and then you can check the procedure's status:
+
+from subprocess import Popen
+
+proc = Popen(['ls', '-l'])
+if proc.poll() is None:
+    proc.kill()
+
+Check out subprocess.Popen.

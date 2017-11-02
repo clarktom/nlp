@@ -1,0 +1,18 @@
+T1	Method 12 26	flatten(alist)
+T2	Variable 35 40	alist
+T3	Operator 41 43	==
+T4	Operator 56 62	return
+T5	Operator 70 74	elif
+T6	Method 75 86	type(alist)
+T7	Operator 87 89	is
+T8	Operator 90 93	not
+T9	Operand 94 98	list
+T10	Operator 108 114	return
+T11	Operand 115 122	[alist]
+T12	Operator 127 131	else
+T13	Operator 141 147	return
+T14	Method 148 186	flatten(alist[0]) + flatten(alist[1:])
+T15	Operator 8 11	def
+T16	Operator 32 34	if
+T17	Operand 44 46	[]
+T18	Operand 63 65	[]

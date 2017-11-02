@@ -1,0 +1,30 @@
+T1	Method 8 15	index()
+T2	Comment 55 67	# index(...)
+T3	Comment 72 147	# L.index(value, [start, [stop]]) -> integer -- return first index of value
+T4	Operator 150 153	def
+T5	Method 154 179	all_indices(value, qlist)
+T6	Variable 185 192	indices
+T7	Variable 202 205	idx
+T8	Operator 215 220	while
+T9	Operator 235 238	try
+T10	Operand 221 225	True
+T11	Method 296 315	indices.append(idx)
+T12	Method 381 426	all_indices("foo", ["foo","bar","baz","foo"])
+T13	Variable 252 255	idx
+T14	Method 258 283	qlist.index(value, idx+1)
+T15	VBZ 16 23	returns
+T16	DT 24 27	the
+T17	Operand 208 210	-1
+T18	RB 28 33	first
+T19	NN 34 39	index
+T20	NN 43 48	value
+T21	IN 40 42	of
+T22	Operator 324 330	except
+T23	Operand 331 341	ValueError
+T24	Operator 355 360	break
+T25	Operator 365 371	return
+T26	Operand 372 379	indices
+T27	Operand 195 197	[]
+T28	Operator 193 194	=
+T29	Operator 206 207	=
+T30	Operator 256 257	=

@@ -1,0 +1,10 @@
+Post 20
+
+
+It's because any iterable can be joined, not just lists, but the result and the "joiner" are always strings.
+
+E.G:
+
+import urllib2
+print '\n############\n'.join(
+    urllib2.urlopen('http://data.stackexchange.com/users/7095'))

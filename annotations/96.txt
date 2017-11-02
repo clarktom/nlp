@@ -1,0 +1,18 @@
+Post 96
+In Python 2.7, simply do:
+
+from collections import OrderedDict
+# regular unsorted dictionary
+d = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
+
+# dictionary sorted by key
+OrderedDict(sorted(d.items(), key=lambda t: t[0]))
+OrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])
+
+# dictionary sorted by value
+OrderedDict(sorted(d.items(), key=lambda t: t[1]))
+OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])
+
+copy-paste from : http://docs.python.org/dev/library/collections.html#ordereddict-examples-and-recipes
+
+Enjoy ;-)

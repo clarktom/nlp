@@ -1,0 +1,17 @@
+T1	Method 74 102	enumerate(iterable, start=1)
+T2	Operator 71 73	in
+T3	Operator 61 64	for
+T4	Variable 65 70	index
+T5	UNK 113 118	index
+T6	VB 107 112	print
+T7	RB 13 19	pretty
+T8	JJ 20 26	simple
+T9	PRP 8 10	It
+T10	TO 27 29	to
+T11	VB 30 35	start
+T12	PRP 36 38	it
+T13	IN 39 43	from
+T14	JJ 46 51	other
+T15	IN 52 56	than
+T16	CD 44 45	1
+T17	CD 57 58	0

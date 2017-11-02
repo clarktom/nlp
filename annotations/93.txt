@@ -1,0 +1,6 @@
+Post 93
+You need to make the second element a 1-tuple, eg:
+
+a = ('2',)
+b = 'z'
+new = a + (b,)

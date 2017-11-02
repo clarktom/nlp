@@ -1,0 +1,16 @@
+T1	Variable 8 14	mylist
+T2	Comment 39 76	#------------------------------------
+T3	Comment 101 138	#------------------------------------
+T4	Comment 77 100	# Method-1 : Last index
+T5	Method 140 157	print(mylist[-1])
+T6	Comment 160 197	#------------------------------------
+T7	Comment 198 220	# Method-2 : Using len
+T13	Method 261 291	print(mylist[len(mylist) - 1])
+T14	Comment 222 259	#------------------------------------
+T15	Comment 294 331	#------------------------------------
+T16	Comment 332 380	# Method-3 : Using pop, pop will remove the last
+T17	Method 457 476	print(mylist.pop())
+T18	Comment 382 416	#            element from the list
+T19	Comment 418 455	#------------------------------------
+T8	Operand 17 37	[ 1 , 2 , 3 , 4 , 5]
+T9	Operator 15 16	=

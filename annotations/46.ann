@@ -1,0 +1,19 @@
+T1	Variable 42 45	foo
+T2	Variable 103 115	random_index
+T3	Method 118 139	randrange(0,len(foo))
+T4	VB 140 145	print
+T5	NN 79 85	random
+T6	VB 86 92	import
+T7	UNK 93 102	randrange
+T8	UNK 146 163	foo[random_index]
+T9	IN 8 10	In
+T10	IN 74 78	from
+T11	RB 20 24	also
+T12	VBP 25 29	need
+T13	DT 30 33	the
+T14	NN 34 39	index
+T15	NN 11 15	case
+T16	PRP 16 19	you
+T17	Operator 46 47	=
+T18	Operator 116 117	=
+T19	Operand 48 73	['a', 'b', 'c', 'd', 'e']

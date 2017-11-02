@@ -1,0 +1,7 @@
+Post 29
+
+
+import re
+
+r_unwanted = re.compile("[\n\t\r]")
+r_unwanted.sub("", your_text)

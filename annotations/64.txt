@@ -1,0 +1,4 @@
+Post 64
+import os
+os.path.exists(path) # returns whether the path (dir or file) exists or not
+os.path.isfile(path) # returns whether the file exists or not

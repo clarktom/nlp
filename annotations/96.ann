@@ -1,0 +1,23 @@
+T1	IN 8 10	In
+T2	URL 475 559	http://docs.python.org/dev/library/collections.html#ordereddict-examples-and-recipes
+T3	NN 457 467	copy-paste
+T4	IN 468 472	from
+T5	VB 561 566	Enjoy
+T6	Method 334 384	OrderedDict(sorted(d.items(), key=lambda t: t[1]))
+T7	Method 385 455	OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])
+T8	Comment 305 333	# dictionary sorted by value
+T9	Method 233 303	OrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])
+T10	Method 182 232	OrderedDict(sorted(d.items(), key=lambda t: t[0]))
+T11	Comment 155 181	# dictionary sorted by key
+T12	Comment 71 100	# regular unsorted dictionary
+T13	Variable 101 102	d
+T14	Operator 103 104	=
+T15	Operand 105 153	{'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
+T16	IN 35 39	from
+T17	VB 52 58	import
+T18	UNK 40 51	collections
+T19	UNK 59 70	OrderedDict
+T20	NNP 11 17	Python
+T21	CD 18 21	2.7
+T22	JJ 23 29	simply
+T23	VB 30 32	do

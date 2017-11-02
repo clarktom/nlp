@@ -1,0 +1,3 @@
+Post 73
+print function in python automatically generates a new line. You could try:
+print("Hello World", end="")

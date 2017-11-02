@@ -1,0 +1,5 @@
+Post 44
+It's pretty simple to start it from 1 other than 0:
+
+for index in enumerate(iterable, start=1):
+   print index

@@ -1,0 +1,10 @@
+T1	NNP 8 14	Python
+T2	VBZ 15 20	makes
+T3	DT 21 25	this
+T4	JJ 39 43	easy
+T5	RB 26 38	ridiculously
+T6	Variable 46 56	mergedlist
+T7	Operand 59 66	listone
+T8	Operand 69 76	listtwo
+T9	Operator 57 58	=
+T10	Operator 67 68	+

@@ -1,0 +1,10 @@
+Post 77
+The eval function lets a python program run python code within itself.
+
+eval example (interactive shell):
+
+>>> x = 1
+>>> eval('x + 1')
+2
+>>> eval('x')
+1

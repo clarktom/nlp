@@ -1,0 +1,27 @@
+Post 54
+>>> def gen():
+...     def init():
+...         return 0
+...     i = init()
+...     while True:
+...         val = (yield i)
+...         if val=='restart':
+...             i = init()
+...         else:
+...             i += 1
+
+>>> g = gen()
+>>> g.next()
+0
+>>> g.next()
+1
+>>> g.next()
+2
+>>> g.next()
+3
+>>> g.send('restart')
+0
+>>> g.next()
+1
+>>> g.next()
+2

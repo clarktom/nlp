@@ -1,0 +1,6 @@
+Post 92
+class Materials:
+    Shaded, Shiny, Transparent, Matte = range(4)
+
+>>> print Materials.Matte
+3

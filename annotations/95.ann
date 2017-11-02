@@ -1,0 +1,10 @@
+T1	Variable 12 13	x
+T2	Operator 14 15	=
+T3	Operand 16 21	{1:2}
+T4	VB 26 31	print
+T5	Variable 32 33	x
+T6	Variable 34 40	{1: 2}
+T7	Method 46 61	x.update({3:4})
+T8	VB 66 71	print
+T9	Variable 74 86	{1: 2, 3: 4}
+T10	Variable 72 73	x

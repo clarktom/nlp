@@ -1,0 +1,9 @@
+T1	Variable 41 48	newList
+T2	Operand 51 61	oldList[:]
+T3	NNP 8 14	Python
+T4	NN 17 22	idiom
+T5	VBG 27 32	doing
+T6	DT 33 37	this
+T7	IN 23 26	for
+T8	VBZ 38 40	is
+T9	Operator 49 50	=

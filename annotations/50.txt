@@ -1,0 +1,4 @@
+Post 50
+You can use sets to obtain merged list of unique values
+
+mergedlist = list(set(listone + listtwo))

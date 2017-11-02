@@ -1,0 +1,10 @@
+Post 22
+
+
+    DON'T DO THIS. Raising a bare Exception is absolutely not the right thing to do; see Aaron Hall's excellent answer instead.
+
+Can't get much more pythonic than this:
+
+raise Exception("I know python!")
+
+See the raise statement docs for python if you'd like more info.

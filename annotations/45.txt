@@ -1,0 +1,9 @@
+Post 45
+You can do that using type():
+
+>>> a = []
+>>> type(a)
+<type 'list'>
+>>> f = ()
+>>> type(f)
+<type 'tuple'>

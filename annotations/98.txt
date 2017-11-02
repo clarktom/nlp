@@ -1,0 +1,23 @@
+Post 98
+# simple case alternative
+
+some_value = 5.0
+
+# this while loop block simulates a case block
+
+# case
+while True:
+
+    # case 1
+    if some_value > 5:
+        print ('Greater than five')
+        break
+
+    # case 2
+    if some_value == 5:
+        print ('Equal to five')
+        break
+
+    # else case 3
+    print ( 'Must be less than 5')
+    break

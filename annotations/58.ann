@@ -1,0 +1,36 @@
+T1	IN 86 90	from
+T2	Variable 121 124	cmd
+T3	Variable 138 139	p
+T4	Variable 197 200	err
+T5	Method 203 218	p.communicate()
+T6	Method 142 191	Popen(cmd , shell=True, stdout=PIPE, stderr=PIPE)
+T7	String 127 137	"ls -l ~/"
+T8	String 225 240	"Return code: "
+T9	Method 261 273	out.rstrip()
+T10	Method 275 287	err.rstrip()
+T11	Variable 192 195	out
+T12	VB 219 224	print
+T13	VB 255 260	print
+T14	UNK 242 254	p.returncode
+T15	NN 91 101	subprocess
+T16	VB 102 108	import
+T17	UNK 109 114	Popen
+T18	UNK 116 120	PIPE
+T19	DT 8 12	This
+T20	DT 39 43	This
+T21	NN 44 48	code
+T22	NN 53 63	everything
+T23	PRP 64 67	you
+T24	PRP 20 21	I
+T25	PRP_ 26 28	my
+T26	VBP 22 25	run
+T27	NNS 29 37	commands
+T28	WRB 16 19	how
+T29	VBZ 13 15	is
+T30	RB 49 52	has
+T31	VBP 68 72	need
+T32	RB 73 79	pretty
+T33	JJ 80 84	much
+T34	Operator 125 126	=
+T35	Operator 140 141	=
+T36	Operator 201 202	=

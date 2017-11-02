@@ -1,0 +1,19 @@
+Post 3
+You can make the file usable as a script as well as an importable module.
+
+fibo.py (a module named fibo)
+
+# Other modules can IMPORT this MODULE to use the function fib
+def fib(n):    # write Fibonacci series up to n
+    a, b = 0, 1
+    while b < n:
+        print(b, end=' ')
+        a, b = b, a+b
+    print()
+
+# This allows the file to be used as a SCRIPT
+if __name__ == "__main__":
+    import sys
+    fib(int(sys.argv[1]))
+
+Reference: https://docs.python.org/3.5/tutorial/modules.html

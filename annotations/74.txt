@@ -1,0 +1,4 @@
+Post 74
+You can do it with end argument of print. In python3 range() returns iterator and xrange() doesn't exist.
+
+for i in range(10): print('.', end='')

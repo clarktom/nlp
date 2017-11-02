@@ -1,0 +1,16 @@
+T1	Operator 8 11	def
+T2	Method 12 28	list_files(path)
+T3	Comment 34 108	# returns a list of names (with extension, without full path) of all files
+T4	Comment 114 130	# in folder path
+T5	Variable 135 140	files
+T6	Method 162 178	os.listdir(path)
+T7	Method 191 231	os.path.isfile(os.path.join(path, name))
+T8	Method 245 263	files.append(name)
+T9	Operator 188 190	if
+T10	Operator 159 161	in
+T11	Operator 150 153	for
+T12	Variable 154 158	name
+T13	Operator 268 274	return
+T14	NNS 275 280	files
+T15	Operator 141 142	=
+T16	Operand 143 145	[]

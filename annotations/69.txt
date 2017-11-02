@@ -1,0 +1,4 @@
+Post 69
+You can also use the code below, if you do not want to get IndexError when the list is empty.
+
+next(reversed(some_list), None)

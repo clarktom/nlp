@@ -1,0 +1,7 @@
+T1	Method 17 33	range(len(ints))
+T2	Operator 8 11	for
+T3	Operator 14 16	in
+T4	UNK 47 54	ints[i]
+T5	VB 38 43	print
+T6	UNK 44 45	i
+T7	Variable 12 13	i

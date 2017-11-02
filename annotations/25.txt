@@ -1,0 +1,2 @@
+Post 25
+What is the Python equivalent of Perl's chomp function, which removes the last character of a string if it is a newline?

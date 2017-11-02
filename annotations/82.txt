@@ -1,0 +1,4 @@
+Post 82
+To get all indices:
+
+ indices = [i for i,x in enumerate(xs) if x == 'foo']

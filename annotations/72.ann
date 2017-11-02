@@ -1,0 +1,26 @@
+T1	VBG 8 13	Using
+T2	UNK 14 31	functools.partial
+T3	Method 145 168	printf("Hello world\n")
+T4	Method 107 139	functools.partial(print, end="")
+T5	VB 76 82	import
+T6	Variable 98 104	printf
+T7	VB 35 41	create
+T8	JJ 44 47	new
+T9	NN 48 56	function
+T10	UNK 64 70	printf
+T11	VBD 57 63	called
+T12	UNK 83 92	functools
+T13	UH 169 174	Hello
+T14	NN 175 180	world
+T15	JJ 182 186	Easy
+T16	NN 187 190	way
+T17	NN 201 209	function
+T18	NNS 223 233	parameters
+T19	IN 210 214	with
+T20	TO 191 193	to
+T21	DT 199 200	a
+T22	VB 194 198	wrap
+T23	VB 215 222	default
+T24	TO 32 34	to
+T25	DT 42 43	a
+T26	Operator 105 106	=

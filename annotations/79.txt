@@ -1,0 +1,2 @@
+Post 79
+For a list ["foo", "bar", "baz"] and an item in the list "bar", what's the cleanest way to get its index (1) in Python?

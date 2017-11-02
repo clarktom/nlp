@@ -1,0 +1,11 @@
+Post 14
+
+
+Another way to find whether a string contains a few characters or not with the Boolean return value (i.e. True or `False):
+
+str1 = "This be a string"
+find_this = "tr"
+if find_this in str1:
+    print find_this, " is been found in ", str1
+else:
+    print find_this, " is not found in ", str1

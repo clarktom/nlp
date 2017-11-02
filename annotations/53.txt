@@ -1,0 +1,2 @@
+Post 53
+Python's idiom for doing this is newList = oldList[:]

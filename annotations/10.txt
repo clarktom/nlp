@@ -1,0 +1,7 @@
+Post 10
+
+
+I have seen the below as preferred, as it will catch the null list as well:
+
+if not a:
+    print "The list is empty or null"

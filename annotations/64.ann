@@ -1,0 +1,6 @@
+T1	VB 8 14	import
+T2	Method 18 38	os.path.exists(path)
+T3	Method 94 114	os.path.isfile(path)
+T4	Comment 39 93	# returns whether the path (dir or file) exists or not
+T5	Comment 115 155	# returns whether the file exists or not
+T6	UNK 15 17	os

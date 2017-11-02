@@ -1,0 +1,16 @@
+T1	IN 8 10	In
+T2	NNP 11 17	python
+T3	DT 19 21	an
+T4	JJ 22 27	empty
+T5	NN 28 32	list
+T6	VBZ 33 42	evaluates
+T7	TO 43 45	to
+T8	NN 46 51	False
+T9	Operator 54 56	if
+T10	Operator 57 60	not
+T11	Operand 61 62	c
+T12	VB 67 72	print
+T13	String 73 92	"The list is empty"
+T14	String 108 131	"The list is not empty"
+T15	VB 102 107	print
+T16	Operator 93 97	else

@@ -1,0 +1,8 @@
+Post 51
+You could also use extend in order to add a list add the end of another one:
+
+listone = [1,2,3]
+listtwo = [4,5,6]
+mergedlist = []
+mergedlist.extend(listone)
+mergedlist.extend(listtwo)

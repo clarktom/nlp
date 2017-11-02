@@ -1,0 +1,7 @@
+Post 91
+enumerate() makes this prettier:
+
+for index, value in enumerate(S):
+    print index, value
+
+See here for more.

@@ -1,0 +1,18 @@
+Post 40
+Cleaned up @Deleet example
+
+from collections import Iterable
+
+def flatten(l, a=[]):
+    for i in l:
+        if isinstance(i, Iterable):
+            flatten(i, a)
+        else:
+            a.append(i)
+    return a
+
+daList = [[1,4],[5,6],[23,22,234,2],[2], [ [[1,2],[1,2]],[[11,2],[11,22]] ] ]
+
+print(flatten(daList))
+
+Example: https://repl.it/G8mb/0

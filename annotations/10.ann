@@ -1,0 +1,21 @@
+T1	String 107 134	"The list is empty or null"
+T2	VB 101 106	print
+T3	Operand 94 95	a
+T4	Operator 90 93	not
+T5	Operator 87 89	if
+T6	PRP 10 11	I
+T7	PRP 49 51	it
+T8	MD 52 56	will
+T9	VBP 12 16	have
+T10	JJ 35 44	preferred
+T11	NN 26 31	below
+T12	NN 72 76	list
+T13	JJ 67 71	null
+T14	VB 57 62	catch
+T15	VBN 17 21	seen
+T16	DT 22 25	the
+T17	DT 63 66	the
+T18	IN 46 48	as
+T19	RB 80 84	well
+T20	IN 77 79	as
+T21	IN 32 34	as

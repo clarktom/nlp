@@ -1,0 +1,25 @@
+T1	VBG 8 13	Using
+T2	NNS 14 24	generators
+T3	Method 40 62	get_files(search_path)
+T4	Method 100 120	os.walk(search_path)
+T5	Method 177 208	os.path.join(dirpath, filename)
+T6	Method 222 236	get_files('.')
+T7	Variable 209 219	list_files
+T8	Variable 241 249	filename
+T9	Operand 253 263	list_files
+T10	Method 269 284	print(filename)
+T11	Operator 237 240	for
+T12	Operator 250 252	in
+T13	VB 171 176	yield
+T14	VB 26 32	import
+T15	UNK 33 35	os
+T16	Operator 36 39	def
+T19	Variable 135 143	filename
+T20	Operand 147 156	filenames
+T21	Operator 131 134	for
+T22	Operator 144 146	in
+T23	Operator 69 72	for
+T24	Operator 97 99	in
+T25	Operator 220 221	=
+T17	Variable 74 81	dirpath
+T18	Variable 86 95	filenames

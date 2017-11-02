@@ -1,0 +1,26 @@
+T1	WP 7 11	What
+T2	VBZ 12 16	does
+T3	DT 17 20	the
+T4	Operator 21 23	if
+T5	Variable 24 32	__name__
+T6	Operator 33 35	==
+T7	String 36 46	"__main__"
+T8	VBZ 48 50	do
+T9	Comment 53 72	# Threading example
+T10	Operator 94 97	def
+T11	Operator 146 151	while
+T12	Method 98 140	myfunction(string, sleeptime, lock, *args)
+T13	Operand 152 153	1
+T14	Method 163 177	lock.acquire()
+T15	Method 186 207	time.sleep(sleeptime)
+T16	Method 216 230	lock.release()
+T17	Method 239 260	time.sleep(sleeptime)
+T18	Operator 261 263	if
+T19	Variable 264 272	__name__
+T20	Operator 273 275	==
+T21	Operand 276 286	"__main__"
+T22	Variable 293 296	ock
+T23	Operator 297 298	=
+T24	Method 299 321	thread.allocate_lock()
+T25	Method 326 387	thread.start_new_thread(myfunction, ("Thread #: 1", 2, lock))
+T26	Method 392 452	thread.start_new_thread(myfunction, ("Thread #: 2", 2, lock)

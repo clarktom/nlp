@@ -1,0 +1,6 @@
+T1	DT 7 9	An
+T2	NN 10 21	alternative
+T3	Variable 24 25	z
+T4	Operator 26 27	=
+T5	Method 28 36	x.copy()
+T6	Method 37 48	z.update(y)

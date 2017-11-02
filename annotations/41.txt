@@ -1,0 +1,15 @@
+Post 41
+Here's a one-liner for you:
+
+singleton = lambda c: c()
+
+Here's how you use it:
+
+@singleton
+class wat(object):
+    def __init__(self): self.x = 1
+    def get_x(self): return self.x
+
+assert wat.get_x() == 1
+
+Your object gets instantiated eagerly. This may or may not be what you want.

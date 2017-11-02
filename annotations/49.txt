@@ -1,0 +1,4 @@
+Post 49
+Python makes this ridiculously easy.
+
+mergedlist = listone + listtwo

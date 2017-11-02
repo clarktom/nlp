@@ -1,0 +1,21 @@
+T6	Method 93 124	int(random.random() * len(foo))
+T7	Method 135 166	int(random.random() * len(foo))
+T8	UNK 131 134	foo
+T9	Variable 55 58	foo
+T10	VB 87 92	print
+T11	VB 125 130	print
+T12	UNK 169 182	random.choice
+T13	VB 41 47	import
+T14	VB 35 38	use
+T15	VB 183 187	does
+T16	VBP 15 19	need
+T17	PRP 11 14	you
+T18	IN 8 10	if
+T19	DT 20 23	the
+T20	DT 188 191	the
+T21	NN 24 29	index
+T22	NN 48 54	random
+T23	JJ 192 196	same
+T24	RB 30 34	just
+T1	Operand 61 86	['a', 'b', 'c', 'd', 'e']
+T2	Operator 59 60	=

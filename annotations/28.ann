@@ -1,0 +1,9 @@
+T1	Method 62 93	"\n\n hello world \n\n".strip()
+T2	String 94 107	'hello world'
+T3	Method 37 49	line.strip()
+T4	Variable 30 34	line
+T5	NN 51 55	demo
+T6	PRP 10 13	you
+T7	MD 14 17	can
+T8	VB 18 21	use
+T9	UNK 22 27	strip

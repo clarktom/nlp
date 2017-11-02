@@ -1,0 +1,40 @@
+T1	Operator 8 11	def
+T2	Operator 44 45	=
+T3	Operator 59 60	=
+T4	Operator 80 82	in
+T5	Operator 70 73	for
+T6	Method 83 100	enumerate(myList)
+T7	Variable 74 75	i
+T8	Variable 76 79	num
+T9	Operator 110 112	if
+T10	Method 113 130	abs(target - num)
+T11	Operator 131 132	<
+T12	Operand 133 137	diff
+T13	Variable 151 155	diff
+T14	Method 158 175	abs(target - num)
+T15	Variable 188 193	index
+T16	Operand 196 197	i
+T17	Operator 202 208	return
+T18	Operand 209 214	index
+T19	Variable 53 58	index
+T20	Operand 61 65	None
+T21	Variable 39 43	diff
+T22	Method 12 34	finder(myList, target)
+T23	NN 233 237	EDIT
+T24	VBZ 226 230	help
+T25	VBP 216 220	Hope
+T26	DT 221 225	this
+T27	Operator 156 157	=
+T28	Operator 194 195	=
+T29	IN 240 242	If
+T30	VBP 243 246	you
+T31	VBP 249 253	like
+T32	DT 254 255	a
+T33	NN 256 265	one-liner
+T34	RB 267 271	then
+T35	PRP 272 275	you
+T36	MD 276 281	might
+T37	VBP 282 286	like
+T38	DT 287 291	this
+T39	JJR 292 298	better
+T40	Method 301 336	min(L, key=lambda x: abs(target-x))

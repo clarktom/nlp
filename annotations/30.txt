@@ -1,0 +1,8 @@
+Post 30
+
+
+Use join:
+
+>>> sentence = ['this','is','a','sentence']
+>>> '-'.join(sentence)
+'this-is-a-sentence'

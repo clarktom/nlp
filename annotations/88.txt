@@ -1,0 +1,5 @@
+Post 88
+s = "Kilometer"
+print(s.lower())
+
+The official documentation is str.lower().

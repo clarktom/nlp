@@ -1,0 +1,2 @@
+T1	Method 12 46	["foo", "bar", "baz"].index("bar")
+T2	CD 47 48	1

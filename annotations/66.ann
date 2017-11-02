@@ -1,0 +1,12 @@
+T1	IN 8 10	In
+T2	WRB 19 22	how
+T3	PRP 11 17	Python
+T4	VBP 23 25	do
+T5	PRP 26 29	you
+T6	VB 30 33	get
+T7	JJ 38 42	last
+T8	NN 43 50	element
+T9	NN 56 60	list
+T10	DT 54 55	a
+T11	IN 51 53	of
+T12	DT 34 37	the

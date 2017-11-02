@@ -1,0 +1,22 @@
+T1	URL 196 253	https://docs.python.org/3/library/time.html#time.strftime
+T2	Method 48 92	datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+T3	String 142 163	'2013-09-18 11:16:32'
+T4	IN 14 18	from
+T5	VB 28 34	import
+T6	UNK 19 27	datetime
+T7	UNK 35 43	datetime
+T8	UNK 180 188	strftime
+T9	IN 94 97	For
+T10	DT 98 102	this
+T11	DT 112 115	the
+T12	DT 136 140	this
+T13	DT 165 168	The
+T14	NN 103 110	example
+T15	NN 116 122	output
+T16	NN 169 175	format
+T17	MD 123 127	will
+T18	VB 128 130	be
+T19	IN 131 135	like
+T20	IN 176 179	for
+T21	IN 192 194	at
+T22	VBZ 189 191	is

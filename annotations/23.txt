@@ -1,0 +1,22 @@
+Post 23
+
+
+from datetime import datetime
+
+datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+
+The resulting datetime object is timezone-naive.
+
+Links:
+
+    Python documentation for strptime: Python 2, Python 3
+
+    Python documentation for strftime format mask: Python 2, Python 3
+
+    This is also a really nice reference for strftime
+
+Notes:
+
+    strptime = "string parse time"
+    strftime = "string format time"
+    Pronounce it out loud today & you won't have to search for it again in 6 months.

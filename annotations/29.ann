@@ -1,0 +1,6 @@
+T1	Variable 21 31	r_unwanted
+T2	Method 34 56	re.compile("[\n\t\r]")
+T3	Method 57 86	r_unwanted.sub("", your_text)
+T4	UNK 17 19	re
+T5	VB 10 16	import
+T6	Operator 32 33	=

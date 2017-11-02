@@ -1,0 +1,10 @@
+T1	URL 8 57	https://docs.python.org/2/library/subprocess.html
+T2	Method 103 128	os.system('cat testfile')
+T3	NN 83 90	command
+T4	VB 93 99	import
+T5	CC 62 64	or
+T6	IN 65 68	for
+T7	RB 71 75	very
+T8	JJ 76 82	simple
+T9	UNK 100 102	os
+T10	DT 69 70	a

@@ -1,0 +1,7 @@
+Post 87
+In python, an empty list evaluates to False.
+
+if not c:
+   print "The list is empty"
+else:
+   print "The list is not empty"

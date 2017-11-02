@@ -1,0 +1,13 @@
+T1	String 21 32	'String ok'
+T2	String 45 49	'ok'
+T3	String 55 67	'String nok'
+T4	Operator 33 35	if
+T5	Variable 36 41	value
+T6	Operator 50 54	else
+T7	NN 88 98	expression
+T8	DT 74 75	a
+T9	PRP 69 71	It
+T10	JJ 76 87	conditional
+T11	JJ 8 12	Easy
+T12	UNK 13 18	peasy
+T13	Operator 42 44	==

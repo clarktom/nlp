@@ -1,0 +1,7 @@
+T1	TO 8 10	To
+T2	VB 11 14	get
+T3	DT 15 18	all
+T4	NNS 19 26	indices
+T5	Variable 30 37	indices
+T6	Operand 40 82	[i for i,x in enumerate(xs) if x == 'foo']
+T7	Operator 38 39	=

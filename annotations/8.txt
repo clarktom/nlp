@@ -1,0 +1,7 @@
+Post 8
+
+
+if not a:
+  print("List is empty")
+
+Using the implicit booleanness of the empty list is quite pythonic.

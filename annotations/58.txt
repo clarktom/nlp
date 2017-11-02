@@ -1,0 +1,9 @@
+Post 58
+This is how I run my commands. This code has everything you need pretty much
+
+from subprocess import Popen, PIPE
+cmd = "ls -l ~/"
+p = Popen(cmd , shell=True, stdout=PIPE, stderr=PIPE)
+out, err = p.communicate()
+print "Return code: ", p.returncode
+print out.rstrip(), err.rstrip()

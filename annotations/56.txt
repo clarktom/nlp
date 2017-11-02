@@ -1,0 +1,5 @@
+Post 56
+Yes, you can use it that way :
+
+is_fat = True
+state = "fat" if is_fat else "not fat"

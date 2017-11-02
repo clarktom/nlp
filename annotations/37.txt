@@ -1,0 +1,13 @@
+Post 37
+If you are looking for a Python implementation of find, this is a recipe I use rather frequently:
+
+from findtools.find_files import (find_files, Match)
+
+# Recursively find all *.sh files in **/usr/bin**
+sh_files_pattern = Match(filetype='f', name='*.sh')
+found_files = find_files(path='/usr/bin', match=sh_files_pattern)
+
+for found_file in found_files:
+    print found_file
+
+So I made a PyPI package out of it and there is also a GitHub repository. I hope that someone finds it potentially useful for this code.

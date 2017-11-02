@@ -1,0 +1,28 @@
+T1	Comment 8 33	# simple case alternative
+T2	Comment 53 99	# this while loop block simulates a case block
+T3	Comment 101 107	# case
+T4	Comment 125 133	# case 1
+T5	Variable 35 45	some_value
+T7	Operator 108 113	while
+T8	Operand 114 118	True
+T9	VB 165 170	print
+T10	VB 201 206	break
+T11	VB 253 258	print
+T12	VB 285 290	break
+T13	VB 314 319	print
+T14	VB 349 354	break
+T15	String 260 275	'Equal to five'
+T16	String 322 343	'Must be less than 5'
+T17	Comment 296 309	# else case 3
+T18	Comment 212 220	# case 2
+T19	Variable 228 238	some_value
+T20	Operand 242 243	5
+T21	Operator 225 227	if
+T22	String 172 191	'Greater than five'
+T23	Variable 141 151	some_value
+T24	Operand 154 155	5
+T25	Operator 138 140	if
+T26	Operator 46 47	=
+T6	Operand 48 51	5.0
+T27	Operator 152 153	>
+T28	Operator 239 241	==

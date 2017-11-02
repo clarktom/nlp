@@ -1,0 +1,2 @@
+Post 66
+In Python, how do you get the last element of a list?

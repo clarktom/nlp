@@ -1,0 +1,7 @@
+T1	UNK 14 18	join
+T2	VB 10 13	Use
+T3	Variable 25 33	sentence
+T8	Method 69 87	'-'.join(sentence)
+T9	String 88 108	'this-is-a-sentence'
+T10	Operator 34 35	=
+T4	Operand 36 64	['this','is','a','sentence']

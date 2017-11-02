@@ -1,0 +1,6 @@
+Post 67
+You can also do:
+
+alist.pop()
+
+It depends on what you want to do with your list because the pop() method will delete the last element.

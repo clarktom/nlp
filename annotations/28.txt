@@ -1,0 +1,11 @@
+Post 28
+
+
+you can use strip:
+
+line = line.strip()
+
+demo:
+
+>>> "\n\n hello world \n\n".strip()
+'hello world'

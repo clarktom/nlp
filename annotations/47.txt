@@ -1,0 +1,9 @@
+Post 47
+if you need the index just use:
+
+import random
+foo = ['a', 'b', 'c', 'd', 'e']
+print int(random.random() * len(foo))
+print foo[int(random.random() * len(foo))]
+
+random.choice does the same:)

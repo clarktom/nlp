@@ -1,0 +1,7 @@
+Post 24
+
+
+You can use easy_date to make it easy:
+
+import date_converter
+converted_date = date_converter.string_to_datetime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')

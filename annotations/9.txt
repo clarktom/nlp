@@ -1,0 +1,9 @@
+Post 9
+
+
+I prefer it explicitly:
+
+if len(li) == 0:
+    print('the list is empty')
+
+This way it's 100% clear that li is a sequence (list) and we want to test its size. My problem with if not li: ... is that it gives the false impression that li is a boolean variable.

@@ -1,0 +1,40 @@
+T1	PRP 8 9	i
+T2	PRP 43 44	i
+T3	RB 10 18	recently
+T4	VBN 45 51	solved
+T5	PRP 52 54	it
+T6	DT 335 339	this
+T7	VBZ 340 345	works
+T8	Method 325 333	print(i)
+T9	Method 304 315	range(1,10)
+T10	Method 244 293	os.fdopen(sys.stdout.fileno(), "w", newline=None)
+T11	Comment 192 229	# output: '\n' converts to os.linesep
+T12	Comment 82 118	# reopen stdout with "newline=None".
+T13	Comment 119 134	# in this mode,
+T14	Comment 135 191	# input:  accepts any newline character, outputs as '\n'
+T15	VB 66 72	import
+T16	VBG 58 63	doing
+T17	IN 55 57	by
+T18	DT 23 26	the
+T19	RB 27 31	same
+T20	NN 32 39	problem
+T21	VBN 19 22	had
+T22	UNK 73 76	sys
+T23	UNK 78 80	os
+T24	Variable 231 241	sys.stdout
+T25	Operator 295 298	for
+T26	Operator 301 303	in
+T27	Variable 299 300	i
+T28	IN 346 348	on
+T29	DT 349 353	both
+T30	NNP 354 358	unix
+T31	NNP 363 370	windows
+T32	NNP 397 403	macosx
+T33	CC 359 362	and
+T34	Operator 242 243	=
+T35	VBZ 375 379	have
+T36	RB 380 383	not
+T37	VBN 384 390	tested
+T38	PRP 391 393	it
+T39	IN 394 396	on
+T40	UNK 409 412	hth

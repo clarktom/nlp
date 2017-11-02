@@ -1,0 +1,12 @@
+T1	String 43 49	"blah"
+T2	Operator 74 82	continue
+T3	Operator 50 53	not
+T4	Operator 54 56	in
+T5	Operator 40 42	if
+T6	Operand 57 67	somestring
+T7	IN 26 28	in
+T8	PRP 10 13	You
+T9	VB 18 21	use
+T10	DT 22 25	the
+T11	NN 29 37	operator
+T12	MD 14 17	can

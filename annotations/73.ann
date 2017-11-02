@@ -1,0 +1,13 @@
+T1	VB 8 13	print
+T2	Method 84 112	print("Hello World", end="")
+T3	NN 14 22	function
+T4	NNP 26 32	python
+T5	RB 33 46	automatically
+T6	VBZ 47 56	generates
+T7	DT 57 58	a
+T8	JJ 59 62	new
+T9	NN 63 67	line
+T10	IN 23 25	in
+T11	PRP 69 72	You
+T12	MD 73 78	could
+T13	VB 79 82	try

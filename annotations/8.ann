@@ -1,0 +1,15 @@
+T1	Method 21 43	print("List is empty")
+T2	IN 9 11	if
+T3	RB 12 15	not
+T4	DT 16 17	a
+T5	VBG 45 50	Using
+T6	DT 51 54	the
+T7	JJ 55 63	implicit
+T8	JJ 103 111	pythonic
+T9	NN 64 75	booleanness
+T10	NN 89 93	list
+T11	JJ 83 88	empty
+T12	DT 79 82	the
+T13	IN 76 78	of
+T14	VBZ 94 96	is
+T15	RB 97 102	quite

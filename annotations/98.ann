@@ -1,0 +1,3 @@
+T1	Comment 8 33	# simple case alternative
+T2	Comment 53 99	# this while loop block simulates a case block
+T3	Comment 101 107	# case

@@ -1,0 +1,7 @@
+Post 59
+https://docs.python.org/2/library/subprocess.html
+
+...or for a very simple command:
+
+import os
+os.system('cat testfile')

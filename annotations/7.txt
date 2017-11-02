@@ -1,0 +1,8 @@
+Post 7
+
+
+For example, if passed the following:
+
+a = []
+
+How do I check to see if a is empty?

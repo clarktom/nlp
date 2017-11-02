@@ -1,0 +1,15 @@
+Post 35
+Python 3.5 introduced new, faster method for walking through the directory - os.scandir().
+
+Example:
+
+for file in os.scandir('/usr/bin'):
+    line = ''
+    if file.is_file():
+        line += 'f'
+    elif file.is_dir():
+        line += 'd'
+    elif file.is_symlink():
+        line += 'l'
+    line += '\t'
+    print("{}{}".format(line, file.name))

@@ -1,0 +1,11 @@
+Post 36
+You should use os module for listing directory content.os.listdir(".") returns all the contents of the directory. We iterate over the result and append to the list.
+
+import os
+
+content_list = []
+
+for content in os.listdir("."): # "." means current directory
+    content_list.append(content)
+
+print content_list

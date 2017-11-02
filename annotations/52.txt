@@ -1,0 +1,2 @@
+Post 52
+new_list = list(old_list)

@@ -1,0 +1,30 @@
+T1	DT 8 9	A
+T2	DT 32 35	the
+T3	DT 54 57	the
+T4	DT 64 68	This
+T5	NN 69 77	function
+T6	NN 90 95	issue
+T7	VBZ 78 85	handles
+T8	NN 36 43	element
+T9	NN 58 62	list
+T10	Comment 98 165	# if element is found it returns index of element else returns None
+T11	Operator 167 170	def
+T12	Operator 220 223	try
+T13	Operator 285 291	return
+T14	Operator 310 316	except
+T15	Operator 337 343	return
+T16	Operand 317 327	ValueError
+T17	Variable 233 246	index_element
+T18	Operator 247 248	=
+T19	Method 249 276	list_element.index(element)
+T20	Method 171 214	find_element_in_list(element, list_element)
+T21	NN 10 17	problem
+T22	VB 23 28	arise
+T23	IN 29 31	if
+T24	MD 18 22	will
+T25	VBZ 44 46	is
+T26	RB 47 50	not
+T27	IN 51 53	in
+T28	DT 86 89	the
+T29	Operand 344 348	None
+T30	Operand 292 305	index_element

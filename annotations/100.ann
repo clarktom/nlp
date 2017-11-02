@@ -1,0 +1,9 @@
+T1	Variable 85 99	[40, 20, 10, 0
+T2	Variable 77 84	L[::-1]
+T3	CC 69 71	Or
+T4	Variable 52 67	[40, 20, 10, 0]
+T5	Variable 50 51	L
+T6	Method 34 45	L.reverse()
+T7	Operand 17 29	[0,10,20,40]
+T8	Operator 15 16	=
+T9	Variable 13 14	L

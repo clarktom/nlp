@@ -1,0 +1,21 @@
+T1	NNP 11 17	Python
+T2	CD 18 21	3.4
+T3	Method 129 143	path.is_file()
+T4	Comment 145 194	# If you want to check a directory: path.is_dir()
+T5	Comment 199 241	# If it is true, return true on your code.
+T6	Operator 126 128	if
+T7	Variable 90 94	path
+T8	Method 97 125	pathlib.Path('path/to/file')
+T9	VB 75 81	import
+T10	UNK 82 89	pathlib
+T11	IN 8 10	In
+T12	DT 22 25	the
+T13	NN 26 34	language
+T14	VBZ 35 43	provides
+T15	DT 44 45	a
+T16	JJ 46 49	new
+T17	NN 50 56	module
+T18	VB 60 66	manage
+T19	NNS 67 72	files
+T20	TO 57 59	to
+T21	Operator 95 96	=

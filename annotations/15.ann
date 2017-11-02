@@ -1,0 +1,11 @@
+T1	Method 22 37	time.strftime()
+T2	String 122 143	'2009-01-05 22:14:39'
+T3	Method 82 121	strftime("%Y-%m-%d %H:%M:%S", gmtime())
+T4	UNK 69 77	strftime
+T5	UNK 61 67	gmtime
+T6	VB 54 60	import
+T7	NN 49 53	time
+T8	IN 44 48	from
+T9	VB 18 21	use
+T10	MD 14 17	can
+T11	PRP 10 13	You

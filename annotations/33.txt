@@ -1,0 +1,8 @@
+Post 33
+A one-line solution to get only list of files (no subdirectories):
+
+filenames = next(os.walk(path))[2]
+
+or absolute pathnames:
+
+paths = [os.path.join(path,fn) for fn in next(os.walk(path))[2]]

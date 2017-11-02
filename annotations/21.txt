@@ -1,0 +1,2 @@
+Post 21
+How can I raise an exception in Python so that it can later be caught via an except block?

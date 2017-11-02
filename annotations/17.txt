@@ -1,0 +1,9 @@
+Post 17
+
+
+import datetime
+date_time = str(datetime.datetime.now())
+date = date_time.split()[0]
+time = date_time.split()[1]
+
+date will print date and time will print time.

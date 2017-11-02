@@ -1,0 +1,27 @@
+T1	Method 112 131	Popen(['ls', '-l'])
+T2	Method 135 146	proc.poll()
+T3	Method 160 171	proc.kill()
+T4	UNK 183 199	subprocess.Popen
+T5	Operator 132 134	if
+T6	Variable 105 109	proc
+T7	IN 75 79	from
+T8	VB 91 97	import
+T9	VB 173 178	Check
+T10	RP 179 182	out
+T11	NN 80 90	subprocess
+T12	Operand 150 154	None
+T13	Operator 147 149	is
+T14	NNP 98 103	Popen
+T15	NNP 20 25	Popen
+T16	VB 16 19	use
+T17	MD 12 15	can
+T18	PRP 8 11	You
+T19	CC 27 30	and
+T20	RB 31 35	then
+T21	PRP 36 39	you
+T22	VB 44 49	check
+T23	MD 40 43	can
+T24	DT 50 53	the
+T25	NN 54 63	procedure
+T26	NN 66 72	status
+T27	Operator 110 111	=

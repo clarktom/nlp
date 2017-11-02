@@ -1,0 +1,13 @@
+Post 55
+You can define a function that returns your generator
+
+def f():
+  def FunctionWithYield(generator_args):
+    code here...
+
+  return FunctionWithYield
+
+Now you can just do as many times as you like:
+
+for x in f()(generator_args): print(x)
+for x in f()(generator_args): print(x)

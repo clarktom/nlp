@@ -1,0 +1,7 @@
+Post 19
+
+
+The len() function can be used with a lot of types in Python - both built-in types and library types.
+
+>>> len([1,2,3])
+3

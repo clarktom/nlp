@@ -1,0 +1,46 @@
+T1	Operator 26 29	def
+T2	Operator 8 13	class
+T3	Operator 75 78	def
+T4	Operator 112 115	def
+T5	Operator 201 204	def
+T6	Comment 375 398	# Basic usage of switch
+T7	Method 307 341	Switch(datetime.today().weekday())
+T8	Method 358 365	case(0)
+T9	Method 205 234	__call__(self, cond, *mconds)
+T10	Method 116 154	__exit__(self, type, value, traceback)
+T11	Method 79 94	__enter__(self)
+T12	Method 30 51	__init__(self, value)
+T13	Variable 53 62	self._val
+T14	Operator 63 64	=
+T15	Operand 14 20	Switch
+T16	Operand 65 70	value
+T17	Operator 96 102	return
+T18	Operand 103 107	self
+T19	Operator 156 162	return
+T20	Operand 163 168	False
+T21	Comment 169 196	# Allows traceback to occur
+T22	Operator 236 242	return
+T23	Operator 253 255	in
+T24	Variable 243 252	self._val
+T25	Operand 256 270	(cond,)+mconds
+T26	IN 272 276	from
+T27	VB 286 292	import
+T28	UNK 277 285	datetime
+T29	UNK 293 301	datetime
+T30	IN 302 306	with
+T31	IN 342 344	as
+T32	NN 345 349	case
+T33	IN 355 357	if
+T34	Comment 448 484	# Note there is no break needed here
+T35	Method 407 439	print("I hate mondays so much.")
+T36	Method 494 503	case(1,2)
+T37	Operator 489 493	elif
+T38	Comment 513 574	# This switch also supports multiple conditions (in one line)
+T39	Method 583 629	print("When is the weekend going to be here?")
+T40	Method 650 679	print("The weekend is near.")
+T41	Method 639 648	case(3,4)
+T42	Operator 634 638	elif
+T43	Operator 684 688	else
+T44	Comment 698 724	# Default would occur here
+T45	Comment 761 799	# Didn't use case for example purposes
+T46	Method 733 760	print("Let's go have fun!")

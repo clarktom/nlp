@@ -1,0 +1,16 @@
+T1	Method 8 19	enumerate()
+T2	VBZ 20 25	makes
+T3	DT 26 30	this
+T4	JJR 31 39	prettier
+T5	Operator 42 45	for
+T6	Operator 59 61	in
+T7	Variable 46 51	index
+T8	Variable 53 58	value
+T9	Method 62 74	enumerate(S)
+T10	VB 80 85	print
+T11	Variable 86 91	index
+T12	Variable 93 98	value
+T13	VB 100 103	See
+T14	RB 104 108	here
+T15	IN 109 112	for
+T16	JJR 113 117	more

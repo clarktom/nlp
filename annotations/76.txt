@@ -1,0 +1,20 @@
+Post 76
+i recently had the same problem..
+
+i solved it by doing:
+
+import sys, os
+
+# reopen stdout with "newline=None".
+# in this mode,
+# input:  accepts any newline character, outputs as '\n'
+# output: '\n' converts to os.linesep
+
+sys.stdout = os.fdopen(sys.stdout.fileno(), "w", newline=None)
+
+for i in range(1,10):
+        print(i)
+
+this works on both unix and windows ... have not tested it on macosx ...
+
+hth

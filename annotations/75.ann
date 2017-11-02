@@ -1,0 +1,17 @@
+T1	PRP 8 11	You
+T2	MD 12 15	can
+T3	VB 16 19	try
+T4	VB 22 28	import
+T5	VB 33 39	import
+T6	Comment 45 82	# Keeps the initial message in buffer
+T7	Comment 148 164	# Wait 2 seconds
+T8	Method 84 128	sys.stdout.write("\rfoobar bar black sheep")
+T9	Method 129 147	sys.stdout.flush()
+T10	Method 165 178	time.sleep(2)
+T11	Comment 179 216	# Replace the message with a new one.
+T12	Method 217 265	sys.stdout.write("\r"+'hahahahaaa             ')
+T13	Method 266 284	sys.stdout.flush()
+T14	Method 343 365	sys.stdout.write('\n')
+T15	Comment 285 342	# Finalize the new message by printing a return carriage.
+T16	UNK 29 32	sys
+T17	NN 40 44	time

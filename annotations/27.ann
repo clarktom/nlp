@@ -1,0 +1,12 @@
+T1	Method 10 69	"line 1\nline 2\r\n...".replace('\n', '').replace('\r', '')
+T2	String 74 91	'line 1line 2...'
+T3	CC 93 95	or
+T4	PRP 96 99	you
+T5	MD 100 105	could
+T6	RB 106 112	always
+T7	VB 113 116	get
+T8	JJR 117 124	geekier
+T9	IN 125 129	with
+T10	NNS 130 137	regexps
+T11	VBP 142 146	have
+T12	NN 147 150	fun

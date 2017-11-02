@@ -1,0 +1,49 @@
+T1	PRP 7 10	You
+T2	URL 444 493	https://docs.python.org/3.5/tutorial/modules.html
+T3	NN 433 442	Reference
+T4	Method 410 431	fib(int(sys.argv[1]))
+T5	Comment 318 363	# This allows the file to be used as a SCRIPT
+T6	Method 309 316	print()
+T7	Method 265 282	print(b, end=' ')
+T8	Operator 244 249	while
+T9	Operator 252 253	<
+T10	Operator 176 179	def
+T11	Operator 233 234	=
+T12	Variable 228 229	a
+T13	Variable 231 232	b
+T14	Variable 250 251	b
+T15	Operand 235 236	0
+T16	Operand 238 239	1
+T17	Operand 254 255	n
+T18	Variable 291 292	a
+T19	Variable 294 295	b
+T20	Operator 296 297	=
+T21	Operand 298 299	b
+T22	Operand 301 304	a+b
+T23	VB 395 401	import
+T24	UNK 402 405	sys
+T25	Operator 364 366	if
+T26	Variable 367 375	__name__
+T27	Operator 376 378	==
+T28	String 379 389	"__main__"
+T29	Comment 191 223	# write Fibonacci series up to n
+T30	Comment 113 175	# Other modules can IMPORT this MODULE to use the function fib
+T31	UNK 82 89	fibo.py
+T32	DT 91 92	a
+T33	NN 93 99	module
+T34	VBN 100 105	named
+T35	NNP 106 110	fibo
+T36	MD 11 14	can
+T37	VB 15 19	make
+T38	DT 20 23	the
+T39	NN 24 28	file
+T40	JJ 29 35	usable
+T41	IN 36 38	as
+T42	DT 39 40	a
+T43	NN 41 47	script
+T44	NN 73 79	module
+T45	JJ 62 72	importable
+T46	RB 48 50	as
+T47	RB 51 55	well
+T48	PRP 56 58	as
+T49	DT 59 61	an

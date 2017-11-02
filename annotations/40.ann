@@ -1,0 +1,27 @@
+T1	URL 334 356	https://repl.it/G8mb/0
+T2	NN 325 332	Example
+T3	Method 301 323	print(flatten(daList))
+T4	Variable 222 228	daList
+T5	Method 156 169	flatten(i, a)
+T6	Method 196 207	a.append(i)
+T7	Method 119 142	isinstance(i, Iterable)
+T8	Method 74 90	flatten(l, a=[])
+T9	Operator 116 118	if
+T10	Operator 178 182	else
+T11	Operator 212 218	return
+T12	IN 36 40	from
+T13	Operator 96 99	for
+T14	Operator 102 104	in
+T15	Variable 100 101	i
+T16	Operand 105 106	l
+T18	NN 27 34	example
+T19	RP 16 18	up
+T20	VBN 8 15	Cleaned
+T21	Operator 70 73	def
+T22	VB 53 59	import
+T23	NNS 41 52	collections
+T24	NN 60 68	Iterable
+T25	Operand 219 220	a
+T17	UNK 19 26	@Deleet
+T26	Operand 231 299	[[1,4],[5,6],[23,22,234,2],[2], [ [[1,2],[1,2]],[[11,2],[11,22]] ] ]
+T27	Operator 229 230	=

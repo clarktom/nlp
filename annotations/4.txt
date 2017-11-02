@@ -1,0 +1,5 @@
+Post 4
+An alternative:
+
+z = x.copy()
+z.update(y)

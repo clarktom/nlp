@@ -1,0 +1,10 @@
+T1	Variable 12 13	d
+T2	Operator 14 15	=
+T3	Operand 16 31	{'key':'value'}
+T4	Method 36 44	print(d)
+T5	Variable 45 61	{'key': 'value'}
+T6	Variable 66 79	d['mynewkey']
+T7	Operator 80 81	=
+T8	String 82 94	'mynewvalue'
+T9	Method 99 107	print(d)
+T10	Variable 108 150	{'mynewkey': 'mynewvalue', 'key': 'value'}

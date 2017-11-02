@@ -1,0 +1,7 @@
+Post 94
+>>> d = {'key':'value'}
+>>> print(d)
+{'key': 'value'}
+>>> d['mynewkey'] = 'mynewvalue'
+>>> print(d)
+{'mynewkey': 'mynewvalue', 'key': 'value'}

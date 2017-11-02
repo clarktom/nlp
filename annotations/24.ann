@@ -1,0 +1,13 @@
+T1	Variable 72 86	converted_date
+T2	Method 89 164	date_converter.string_to_datetime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+T3	VB 50 56	import
+T4	UNK 57 71	date_converter
+T5	PRP 10 13	You
+T6	MD 14 17	can
+T7	VB 18 21	use
+T8	TO 32 34	to
+T9	VB 35 39	make
+T10	PRP 40 42	it
+T11	JJ 43 47	easy
+T12	UNK 22 31	easy_date
+T13	Operator 87 88	=

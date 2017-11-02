@@ -1,0 +1,11 @@
+T1	Operator 8 13	class
+T2	Operand 14 23	Materials
+T3	Variable 29 35	Shaded
+T4	Variable 37 42	Shiny
+T5	Variable 44 55	Transparent
+T6	Variable 57 62	Matte
+T7	Method 65 73	range(4)
+T8	Operator 63 64	=
+T9	VB 79 84	print
+T10	Variable 85 100	Materials.Matte
+T11	CD 101 102	3

@@ -1,0 +1,23 @@
+T1	UNK 80 84	eval
+T2	UNK 12 16	eval
+T3	NN 17 25	function
+T4	DT 8 11	The
+T5	NN 85 92	example
+T6	RB 94 105	interactive
+T7	NN 106 111	shell
+T8	VBZ 26 30	lets
+T9	DT 31 32	a
+T10	NNP 33 39	python
+T11	NN 40 47	program
+T12	VB 48 51	run
+T13	NNP 52 58	python
+T14	NN 59 63	code
+T15	IN 64 70	within
+T16	PRP_ 71 77	itself
+T17	Variable 119 120	x
+T18	Method 129 142	eval('x + 1')
+T19	Method 149 158	eval('x')
+T20	CD 159 160	1
+T21	CD 143 144	2
+T22	Operand 123 124	1
+T23	Operator 121 122	=

@@ -1,0 +1,11 @@
+Post 83
+A problem will arise if the element is not in the list. This function handles the issue:
+
+# if element is found it returns index of element else returns None
+
+def find_element_in_list(element, list_element):
+    try:
+        index_element = list_element.index(element)
+        return index_element
+    except ValueError:
+        return None

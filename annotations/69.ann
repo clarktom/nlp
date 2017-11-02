@@ -1,0 +1,21 @@
+T1	Method 103 134	next(reversed(some_list), None)
+T2	PRP 8 11	You
+T3	MD 12 15	can
+T4	RB 16 20	also
+T5	VB 21 24	use
+T6	NN 29 33	code
+T7	DT 25 28	the
+T8	IN 34 39	below
+T9	IN 41 43	if
+T10	PRP 44 47	you
+T11	VBP 48 50	do
+T12	RB 51 54	not
+T13	VBP 55 59	want
+T14	TO 60 62	to
+T15	VB 63 66	get
+T16	NNP 67 77	IndexError
+T17	WRB 78 82	when
+T18	DT 83 86	the
+T19	NN 87 91	list
+T20	VBZ 92 94	is
+T21	JJ 95 100	empty

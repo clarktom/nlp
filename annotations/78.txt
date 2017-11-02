@@ -1,0 +1,2 @@
+Post 78
+To uninstall an .egg you need to rm -rf the egg (it might be a directory) and remove the matching line from site-packages/easy-install.pth

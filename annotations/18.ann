@@ -1,0 +1,20 @@
+T1	Variable 10 15	items
+T2	Method 21 42	items.append("apple")
+T3	Method 43 65	items.append("orange")
+T4	Method 66 88	items.append("banana")
+T5	Comment 90 103	# FAKE METHOD
+T6	Comment 122 139	# Should return 3
+T7	Method 106 120	items.amount()
+T8	WRB 141 144	How
+T9	VBP 145 147	do
+T10	PRP 148 149	I
+T11	DT 154 157	the
+T12	DT 180 183	the
+T13	NNS 168 176	elements
+T14	NN 158 164	number
+T15	NN 184 188	list
+T16	IN 177 179	in
+T17	IN 165 167	of
+T18	VB 150 153	get
+T19	Operator 16 17	=
+T20	Operand 18 20	[]

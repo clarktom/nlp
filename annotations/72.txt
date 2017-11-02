@@ -1,0 +1,11 @@
+Post 72
+Using functools.partial to create a new function called printf
+
+>>> import functools
+
+>>> printf = functools.partial(print, end="")
+
+>>> printf("Hello world\n")
+Hello world
+
+Easy way to wrap a function with default parameters.

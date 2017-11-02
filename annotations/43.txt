@@ -1,0 +1,3 @@
+Post 43
+for i in range(len(ints)):
+   print i, ints[i]

@@ -1,0 +1,9 @@
+Post 12
+
+
+I'm looking for a string.contains or string.indexof method in Python.
+
+I want to do:
+
+if not somestring.contains("blah"):
+   continue

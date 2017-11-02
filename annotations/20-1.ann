@@ -1,0 +1,25 @@
+T1	Method 166 171;172 236	join(     urllib2.urlopen('http://data.stackexchange.com/users/7095'))
+T2	String 147 165	'\n############\n'
+T3	NN 141 146	print
+T4	UNK 133 140	urllib2
+T5	UNK 120 123	E.G
+T6	String 90 98	"joiner"
+T7	NN 126 132	import
+T8	PRP 10 12	It
+T9	IN 15 22	because
+T10	DT 23 26	any
+T11	NN 27 35	iterable
+T12	NNS 60 65	lists
+T13	NN 75 81	result
+T14	NNS 110 117	strings
+T15	RB 103 109	always
+T16	VBP 99 102	are
+T17	VB 40 42	be
+T18	MD 36 39	can
+T19	VBN 43 49	joined
+T20	RB 51 54	not
+T21	RB 55 59	just
+T22	CC 67 70	but
+T23	DT 71 74	the
+T24	DT 86 89	the
+T25	CC 82 85	and

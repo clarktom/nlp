@@ -1,0 +1,7 @@
+Post 65
+In Python 3.4 the language provides a new module to manage files:
+
+import pathlib
+path = pathlib.Path('path/to/file')
+if path.is_file(): # If you want to check a directory: path.is_dir()
+    # If it is true, return true on your code.

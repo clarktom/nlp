@@ -1,0 +1,24 @@
+T1	String 123 157	"line 1\nline 2\r\nline 3\nline 4"
+T2	Method 162 179	text.splitlines()
+T3	Method 97 109	splitlines()
+T4	String 181 189	'line 1'
+T5	String 191 199	'line 2'
+T6	String 201 209	'line 3'
+T7	String 211 219	'line 4'
+T8	Variable 116 120	text
+T9	CC 10 13	And
+T10	PRP 14 15	I
+T11	MD 16 21	would
+T12	VB 22 25	say
+T13	String 30 40	"pythonic"
+T14	DT 26 29	the
+T15	NN 41 44	way
+T16	TO 45 47	to
+T17	VB 48 51	get
+T18	NNS 52 57	lines
+T19	NNS 83 93	characters
+T20	JJ 75 82	newline
+T21	VBG 66 74	trailing
+T22	IN 58 65	without
+T23	VBZ 94 96	is
+T24	Operator 121 122	=

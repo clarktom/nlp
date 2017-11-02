@@ -1,0 +1,10 @@
+Post 16
+
+
+>>> from datetime import datetime
+>>> datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+For this example, the output will be like this: '2013-09-18 11:16:32'
+
+The format for strftime is at:
+https://docs.python.org/3/library/time.html#time.strftime

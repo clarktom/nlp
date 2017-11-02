@@ -1,0 +1,17 @@
+Post 86
+def finder(myList, target)
+    diff = ''
+    index = None
+    for i,num in enumerate(myList):
+        if abs(target - num) < diff:
+            diff = abs(target - num)
+            index = i
+    return index
+
+Hope this helps
+
+EDIT:
+
+If you'd like a one-liner, then you might like this better:
+
+min(L, key=lambda x: abs(target-x))

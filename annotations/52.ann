@@ -1,0 +1,3 @@
+T1	Variable 8 16	new_list
+T2	Method 19 33	list(old_list)
+T3	Operator 17 18	=

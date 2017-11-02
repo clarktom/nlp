@@ -1,0 +1,25 @@
+T1	NNP 7 13	Python
+T2	CD 14 17	3.5
+T3	NNP 19 22	PEP
+T4	CD 23 26	448
+T5	VBZ 28 34	allows
+T6	DT 35 36	a
+T7	JJR 37 42	nicer
+T8	NN 43 49	syntax
+T9	NN 50 56	option
+T10	Variable 59 60	x
+T11	Variable 80 81	y
+T12	Variable 101 106	final
+T13	Operator 61 62	=
+T14	Operator 82 83	=
+T15	Operator 107 108	=
+T16	Operand 63 79	{'a': 1, 'b': 1}
+T17	Operand 84 100	{'a': 2, 'c': 2}
+T18	Operand 109 119	{**x, **y}
+T19	Comment 127 153	# {'a': 2, 'b': 1, 'c': 2}
+T20	Variable 121 126	final
+T21	CC 155 157	Or
+T22	RB 158 162	even
+T23	Variable 164 169	final
+T24	Operator 170 171	=
+T25	Operand 172 198	{'a': 1, 'b': 1, **x, **y}

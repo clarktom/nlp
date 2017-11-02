@@ -1,0 +1,23 @@
+Post 68
+mylist = [ 1 , 2 , 3 , 4 , 5]
+
+#------------------------------------
+# Method-1 : Last index
+#------------------------------------
+
+print(mylist[-1])
+
+
+#------------------------------------
+# Method-2 : Using len 
+#------------------------------------
+
+print(mylist[len(mylist) - 1])
+
+
+#------------------------------------
+# Method-3 : Using pop, pop will remove the last 
+#            element from the list.
+#------------------------------------
+
+print(mylist.pop())

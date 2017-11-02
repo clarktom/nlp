@@ -1,0 +1,6 @@
+Post 11
+
+
+len() is an O(1) operation for Python lists, strings, dicts, and sets. Python internally keeps track of the number of elements in these containers.
+
+JavaScript has a similar notion of truthy/falsy.

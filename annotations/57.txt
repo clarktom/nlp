@@ -1,0 +1,6 @@
+Post 57
+Easy peasy:
+
+'String ok' if value == 'ok' else 'String nok'
+
+It's a conditional expression.

@@ -1,0 +1,12 @@
+Post 5
+Python 3.5 (PEP 448) allows a nicer syntax option:
+
+x = {'a': 1, 'b': 1}
+y = {'a': 2, 'c': 2}
+final = {**x, **y} 
+final
+# {'a': 2, 'b': 1, 'c': 2}
+
+Or even
+
+final = {'a': 1, 'b': 1, **x, **y}

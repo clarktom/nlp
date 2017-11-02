@@ -1,0 +1,9 @@
+Post 31
+I prefer using the glob module, as it does pattern matching and expansion.
+
+import glob
+print(glob.glob("/home/adam/*.txt"))
+
+Will return a list with the queried files:
+
+['/home/adam/file1.txt', '/home/adam/file2.txt', .... ]

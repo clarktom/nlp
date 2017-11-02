@@ -1,0 +1,17 @@
+T1	Variable 40 46	is_fat
+T2	Variable 54 59	state
+T3	NN 49 53	True
+T4	String 62 67	"fat"
+T5	Variable 71 77	is_fat
+T6	Operand 83 92	"not fat"
+T7	UH 8 11	Yes
+T8	PRP 13 16	you
+T9	MD 17 20	can
+T10	VB 21 24	use
+T11	PRP 25 27	it
+T12	DT 28 32	that
+T13	NN 33 36	way
+T14	Operator 78 82	else
+T15	Operator 68 70	if
+T16	Operator 47 48	=
+T17	Operator 60 61	=
