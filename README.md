@@ -1,4 +1,4 @@
-# nlp
+# CZ4045 Natural Language Processing - Online Forum Data Processing
 
 DataCollection folder contains the data scraping files and the data set on Python language. The dataset contians alot of html tags in it. There are 668 threads. Each thread consist of 1 question and all its answers. 
 
