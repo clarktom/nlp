@@ -44,7 +44,7 @@ def sentencetokenize(text, pattern):
 
 methodpattern = (r"(?:\b)(?:[a-zA-Z_])(?:\.\w|\w)*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*(?:\([^\(\)]*\)[^\(\)]*)*\)[^\(\)]*)*\)[^\(\)]*)*\))",'METHOD')
 stringpattern = (r"(?:(?<!\w)|r)(?:(?:\"{3}.+?\"{3})|(?:'{3}.+?'{3})|(?:\"(?:(?!\\n)[^\"])+?\")|(?:'(?:(?!\\n)[^'])+?'))(?!\w)",'STRING')
-commentpattern = (r"(?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?=\\n|\n)",'COMMENT')
+commentpattern = (r"(?:#[^#\n] *?(?!\\n|\n)[\S].+?)(?:=\\n|\n)",'COMMENT')
 variablepattern = (r'(?:(?:(?:(?:[a-zA-Z_](?:\.\w|\w)*)(?:\[\w*?:?\w*?\])*? *?, *?)*(?:[a-zA-Z_](?:\.\w|\w)*)(?:\[\w*?:?\w*?\])*?)(?= *=))|[a-zA-Z_](?:\.\w|\w)*_+(?:\.\w|\w)*','VARIABLE')
 operandpattern = (r'(?<=[+\-*/%=><]) *(?:[\w[({][^+\-*/%=><\n]*)|(?:(?:True|False)(?= *?.*?:))', 'OPERAND')
 URLpattern = (r'(?:(?:https?:\/\/)?(?:[\da-z\.-]+)\.(?:[a-z\.]{2,6})(?:[\/\w \.-]*)*\/?)','URL')
@@ -161,14 +161,14 @@ for filename, post in posts.items():
     doc = r.documents[filename] 
     for word in doc.annotations:
         
-        print("     Manual annotation:", word[0], word[1])
+        print("     Manual annotation:", word)
         result = 0
         matches = [x for x in posts[filename]["words"] if x[0].lower() == word[0].lower()]
         print("         Tokenizer matches:", matches)
         for match in matches:
             result = 1
             # print(match[1].lower(), word.labels.lower())
-            if (match[1].lower()[0] in word[1].lower()) or (word[1].lower() in match[1].lower()[0]):
+            if (match[1].lower() in word[1].lower()) or (word[1].lower() in match[1].lower()):
                 result = 2
                 print("         POS tag match !")
         results.append(result)
